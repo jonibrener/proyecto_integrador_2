@@ -22,14 +22,14 @@ fetch(urlGeneros)
     var titulo = arrayDePeliculasPorGeneros[i].title
     var imagen = arrayDePeliculasPorGeneros[i].poster_path
     li="<article class='peliculasGeneros'>"
-    li+= "<a href=detallePelicula.html?id="
+    li+= '<a href="/home/detalle?id='
     li += id
     li +=">"
     li+= "<img class='generos-imagenes' src='https://image.tmdb.org/t/p/original"
     li+=imagen
     li+= "' alt='img producto'>"
     li+= "<h2 class='titulo-producto'>"
-    li+= "<a href=detallePelicula.html?id="
+    li+= '<a href="/home/detalle?id='
     li+=id
     li+=">"
     li+=titulo
@@ -56,14 +56,14 @@ document.querySelector(".verMenosPelis").onclick = function(e){
      var titulo = arrayDePeliculasPorGeneros[i].title
      var imagen = arrayDePeliculasPorGeneros[i].poster_path
      li="<article class='peliculasGeneros'>"
-     li+= "<a href=detallePelicula.html?id="
+     li+= '<a href="/home/detalle?id='
      li += id
      li +=">"
      li+= "<img class='generos-imagenes' src='https://image.tmdb.org/t/p/original"
      li+=imagen
      li+= "' alt='img producto'>"
      li+= "<h2 class='titulo-producto'>"
-     li+= "<a href=detallePelicula.html?id="
+     li+= '<a href="/home/detalle?id='
      li+=id
      li+=">"
      li+=titulo

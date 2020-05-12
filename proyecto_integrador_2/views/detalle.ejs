@@ -1,0 +1,36 @@
+<%- include('header')%>
+
+<section id="poster" class="posterrr">
+    <br>
+    <h2 class="nombre"> Información de la pelicula</h2>
+    <br>
+          <ul class="info">
+            <li class="titulo">TITULO</li> <br>
+            <li class="poster"></li>
+            <br>
+            <li class="generos"> GENEROS A LOS QUE PERTENECE</li>
+            <br>
+            <li class="lenguaje">Lenguaje Original</li>
+            <br>
+            <li class="sinopsis"> SINOPSIS</li>
+            <br>
+            <li class="estreno"> ESTRENO </li>
+            <li>  <a class="button-fav" onclick="marcarComoFavorito()" > <img class="button-favorito"src="img/fav.jpg" alt=""> </a></li>
+          </ul>
+          <iframe id="trailer" width="560" height="315" src="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+  </section>
+
+  <section id="estrenos" class="section-estrenos">
+    <br>
+    <button onclick="recomendaciones()" class="subtitulo" type="button" name="button"> Ver Recomendaciones...</button>
+    <button onclick="recomendaciones2()" class="subtitulo2" type="button" name="button"> Ver Menos Recomendaciones...</button>
+    <br>
+    <div class="contenedor">
+
+    </div>
+
+  </section>
+
+<%- include('footer')%>

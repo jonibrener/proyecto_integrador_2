@@ -18,7 +18,7 @@ fetch(urltop100)
       var imagen = data.results[i].poster_path
       console.log(titulo)
       li = "<article class='peliculas'>"
-      li+= "<a href=detallePelicula.html?id="
+      li+= '<a href="/home/detalle?id='
       li += id
       li +=">"
       li+= "<img class='imagenes' src='https://image.tmdb.org/t/p/original"
@@ -26,7 +26,7 @@ fetch(urltop100)
       li +="' alt='img producto'>"
 
       li += "<h2 class='titulo-producto'>"
-      li += "<a href=detallePelicula.html?id="
+      li += '<a href="/home/detalle?id='
       li += id
       li +=">"
       li +=titulo
