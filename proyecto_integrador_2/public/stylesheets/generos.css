@@ -1,0 +1,75 @@
+button.dropbtn {
+    background: rgb(104, 242, 204);
+    padding-top: 23px;
+    position: relative;
+    left: -32px;
+    bottom: 0px;
+}
+
+h2.subtitulo{
+  font-size: 2rem;
+  background-color: #68f2cc;
+  color: white;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 20px;
+  border-style: double;
+  border-color: black;
+  text-align: center;
+  margin-top: 3%;
+}
+
+button.verMasPelis{
+  width: 26%;
+    border-radius: 50px;
+    position: relative;
+    right: -500px;
+    background-color: gainsboro;
+}
+
+button.verMenosPelis{
+
+width: 26%;
+    border-radius: 50px;
+    position: relative;
+    right: -500px;
+    background-color: gainsboro;
+}
+
+@media screen and (max-width: 600px) {
+
+
+a.item{
+  position: relative;
+    bottom: 22px;
+    left: 205px;
+}
+button.dropbtn {
+    position: relative;
+    bottom: 40px;
+    left: 212px;
+}
+
+button.w3-button.w3-black {
+    position: relative;
+    bottom: 22px;
+    left: 184px;
+    background-color: rgb(104,242,204)!important;
+}
+button.verMasPelis{
+  width: 26%;
+    border-radius: 50px;
+    position: relative;
+    right: -200px;
+    background-color: gainsboro;
+}
+
+button.verMenosPelis{
+width: 26%;
+    border-radius: 50px;
+    position: relative;
+    right: -200px;
+    background-color: gainsboro;
+}
+
+}

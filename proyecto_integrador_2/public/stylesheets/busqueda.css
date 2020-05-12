@@ -1,0 +1,97 @@
+*{
+    font-family: monaco;
+    box-sizing: border-box;
+}
+img.estrenos-imagenes {
+    width: 100%;
+    border: white;
+    border-style: double;
+}
+
+    section.section-busqueda h2.titulo-producto {
+      width: 80%;
+      text-align: center;
+      margin: auto;
+      padding-top: 8px;
+
+    }
+
+    .busqueda{
+      text-align: center;
+      color: white;
+      padding-top: 40px;
+      }
+
+      h2.subtitulo{
+        font-size: 2rem;
+        background-color: #68f2cc;
+        color: white;
+        width: 50%;
+        margin: 0 auto;
+        border-radius: 20px;
+        border-style: double;
+        border-color: black;
+        margin-top: 3%;
+      }
+
+    a{
+      color: white;
+      font-size: 16px;
+      font-family: monaco;
+    }
+    section div.contenedor_busqueda {
+      overflow: hidden;
+    }
+    section article.peliculas {
+      float: left;
+      width: 30%;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      margin-right: 5%;
+      background-color:#61F3CC ;
+      height: 700px;
+    }
+    article.peliculas:nth-child(3n){
+      margin-right: 0;
+    }
+    section.section-busqueda img{
+      max-width: 100%;
+    }
+    header form.busqueda {
+    top:-7px;
+    left:653px;
+    }
+
+    .button_buscador{
+      width: 20%;
+    position: relative;
+    top: -36px;
+    left: 88px;
+    height: -1px;
+    padding-top: 0px;
+    padding-left: 12px;
+    padding-bottom: 6px;
+    background-color: gainsboro;}
+
+    form.busqueda input{
+    /* position: relative; */
+    bottom: 8px;
+    left: 65px;
+}
+
+button.verMasPelis{
+  width: 26%;
+    border-radius: 50px;
+    position: relative;
+    right: -500px;
+    background-color: gainsboro;
+}
+
+button.verMenosPelis{
+
+width: 26%;
+    border-radius: 50px;
+    position: relative;
+    right: -500px;
+    background-color: gainsboro;
+}

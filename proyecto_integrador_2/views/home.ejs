@@ -1,7 +1,57 @@
 <%- include('header')%>
 
-<h1>
-<%= prueba %>
-</h1>
+
+<div class="carouseles">
+    <section class="car">
+  
+      <a href="estrenos.html" id="estrenos-carousel" class="titulo_carrousel"> Estrenos</a>
+      <ul class="slideshow-container estrenos">
+  
+          <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+      </ul>
+  
+  
+    </section>
+    <section class="car">
+  
+      <a href="popular.html" id="estrenos-carousel" class="titulo_carrousel">Populares</a>
+      <ul class="slideshow-container populares">
+  
+  
+          <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+      </ul>
+  
+  
+    </section>
+  
+    <section class="car">
+  
+      <a href="top100.html" id="estrenos-carousel" class="titulo_carrousel">Mejores Punteadas</a>
+      <ul class="slideshow-container mejorPuntuadas">
+  
+  
+          <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
+      </ul>
+  
+  
+    </section>
+    <section class="car">
+  
+      <a href="prox.html" id="estrenos-carousel" class="titulo_carrousel">Proximas</a>
+      <ul class="slideshow-container proximasPeliculas">
+  
+  
+          <a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
+      </ul>
+  
+  
+    </section>
+  
+  </div>
+
 
 <%- include('footer')%>
