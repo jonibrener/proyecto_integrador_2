@@ -172,8 +172,8 @@ ul.ul-menu{
 .dropdown {
   position: relative;
   display: inline-block;
-  background: rgb(104,242,204)
-  position:relative;
+  background: rgb(104,242,204);
+  position: relative;
   bottom: -15px;
 }
 

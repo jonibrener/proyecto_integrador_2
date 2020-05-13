@@ -141,7 +141,7 @@ fetch(urlEstrenos)
       var titulo = data.results[i].title
       var imagen = data.results[i].poster_path
       li = "<li class='mySlides1'>"
-        li += '<a href="/home/detalle?id='+id+'">'
+        li += '<a href="/home/detalle/'+id+'">'
         li += "<img class='carousel1' src='" + urlConstante + imagen + "' >"
         li+= "</a>"
       li += '</li>'
@@ -175,7 +175,7 @@ fetch(urlEstrenos)
         var imagen = data.results[i].poster_path
         // DEPENDE DEL CARROUSEL
         li = "<li class='mySlides2'>"
-          li += '<a href="/home/detalle?id='+id+'">'
+          li += '<a href="/home/detalle/'+id+'">'
           li += "<img class='carousel1' src='" + urlConstante + imagen + "' >"
           li+= "</a>"
         li += '</li>'
@@ -212,7 +212,7 @@ fetch(urlEstrenos)
           var imagen = data.results[i].poster_path
           // DEPENDE DEL CARROUSEL
           li = "<li class='mySlides3'>"
-            li += '<a href="/home/detalle?id='+id+'">'
+            li += '<a href="/home/detalle/'+id+'">'
             li += "<img class='carousel1' src='" + urlConstante + imagen + "' >"
             li+= "</a>"
           li += '</li>'
@@ -247,7 +247,7 @@ fetch(urlEstrenos)
             var imagen = data.results[i].poster_path
             // DEPENDE DEL CARROUSEL
             li = "<li class='mySlides4'>"
-              li += '<a href="/home/detalle?id='+id+'">'
+              li += '<a href="/home/detalle/'+id+'">'
               li += "<img class='carousel1' src='" + urlConstante + imagen + "' >"
               li+= "</a>"
             li += '</li>'

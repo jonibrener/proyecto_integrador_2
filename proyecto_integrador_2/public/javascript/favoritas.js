@@ -26,14 +26,14 @@ for (var i = 0; i < listaDeFavoritos.length; i++) {
       var titulo = arrayDePeliculasPorGeneros.title
       var imagen = arrayDePeliculasPorGeneros.poster_path
       li="<article id='articulosFavoritos' class='peliculasGeneros'>"
-      li+= '<a href="/home/detalle?id='
+      li+= '<a href="/home/detalle/'
       li += id
       li +=">"
       li+= "<img class='generos-imagenes' src='https://image.tmdb.org/t/p/original"
       li+=imagen
       li+= "' alt='img producto'>"
       li+= "<h2 class='titulo-producto'>"
-      li+= '<a href="/home/detalle?id='
+      li+= '<a href="/home/detalle/'
       li+=id
       li+=">"
       li+=titulo

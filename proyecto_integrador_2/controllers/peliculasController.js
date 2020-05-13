@@ -4,7 +4,7 @@ let peliculasController = {
         res.render('home', {prueba:prueba})
     },
     detalle: function(req,res){
-        var prueba2 = detalle(req.params.id)
+        var prueba2 = req.params.id
         res.render('detalle', {prueba2:prueba2})
     }
 }
