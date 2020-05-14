@@ -10,6 +10,10 @@ let peliculasController = {
     buscador: function (req,res){
         var prueba3 = req.params.nombre
         res.render('buscador', {prueba3:prueba3, pagina: "busqueda"})
+    },
+    genero : function(req,res){
+        var prueba4 = req.params.id
+        res.render('generos', {prueba4:prueba4, pagina: 'generos'})
     }
 }
 

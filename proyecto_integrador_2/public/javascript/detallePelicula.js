@@ -26,7 +26,7 @@ fetch(detallePelicula)
   document.querySelector(".sinopsis").innerHTML = "Sinopsis:" + " " + informacion.overview
   document.querySelector(".lenguaje").innerHTML = "Lenguaje original:" + " " + informacion.original_language
   var generos = informacion.genres.map(function(genero){
-    return '<a href = "generos.html?id='+ genero.id + '">'+ genero.name + '</a>'
+    return '<a href = "/home/genero/?id='+ genero.id + '">'+ genero.name + '</a>'
   })
   document.querySelector(".generos").innerHTML = generos.join(" - ")
   document.querySelector(".estreno").innerHTML = "Fecha de estreno:" + " " + informacion.release_date
