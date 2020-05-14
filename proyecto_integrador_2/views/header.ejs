@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./stylesheets/style.css">
+    <!-- <link rel="stylesheet" href="./stylesheets/style.css"> -->
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -17,10 +17,44 @@
     <!-- UIkit JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="./stylesheets/style.css">
-    <link rel="stylesheet" href="./stylesheets/carrousel.css">
-    <link rel="stylesheet" href="./stylesheets/detallePelicula.css">
-  
+    
+    <% if (pagina == "home"){ %>
+      <link rel="stylesheet" href="/stylesheets/style.css" />
+      <link rel="stylesheet" href="/stylesheets/carrousel.css" />
+
+    <% }else if (pagina == "detalle"){ %>
+      <link rel="stylesheet" href="/stylesheets/style.css" />
+      <link rel="stylesheet" href="./stylesheets/detallePelicula.css" />
+
+    <% }else if (pagina == "busqueda"){ %>
+      <link rel="stylesheet" href="/stylesheets/style.css" />
+      <link rel="stylesheet" href="/stylesheets/busqueda.css" />
+
+    <% }else if (pagina == "estrenos"){ %>
+      <link rel="stylesheet" href="/stylesheets/style.css" />
+      <link rel="stylesheet" href="./stylesheets/estrenos.css" />
+
+    <% }else if (pagina == "fav"){ %>
+      <link rel="stylesheet" href="/stylesheets/style.css" />
+      <link rel="stylesheet" href="./stylesheets/fav.css" />
+
+    <% }else if (pagina == "generos"){ %>
+      <link rel="stylesheet" href="/stylesheets/style.css" />
+      <link rel="stylesheet" href="./stylesheets/generos.css" />
+
+    <% }else if (pagina == "popular"){ %>
+      <link rel="stylesheet" href="/stylesheets/style.css" />
+      <link rel="stylesheet" href="./stylesheets/popular.css" />
+
+    <% }else if (pagina == "prox"){ %>
+      <link rel="stylesheet" href="/stylesheets/style.css" />
+      <link rel="stylesheet" href="./stylesheets/prox.css" />
+
+    <% }else if (pagina == "top100"){ %>
+      <link rel="stylesheet" href="/stylesheets/style.css" />
+      <link rel="stylesheet" href="./stylesheets/top100.css" />
+    <% } %>
+    
 
   </head>
   <body>

@@ -18,13 +18,80 @@
       </body>
     
     </html>
-    <script type="text/javascript" src="/javascript/index.js">
+
+    <% if (pagina == "home"){ %>
+      <script type="text/javascript" src="/javascript/index.js">
     
-    </script>
-    <script type="text/javascript" src="/javascript/general.js">
+      </script>
+      <script type="text/javascript" src="/javascript/general.js">
+      
+      </script>
+    <% }else if (pagina == "detalle"){ %>
     
-    </script>
+      <script type="text/javascript" src="/javascript/general.js">
+      
+      </script>
+      <script type="text/javascript" src="/javascript/detallePelicula.js">
+      
+      </script>
+      <% }else if (pagina == "busqueda"){ %>
+        <script type="text/javascript" src="/javascript/general.js">
+      
+        </script>
+          <script type="text/javascript" src="/javascript/buscador.js">
+      
+          </script>
+
+      <% }else if (pagina == "estrenos"){ %>
+        <script type="text/javascript" src="/javascript/general.js">
+      
+        </script>
+          <script type="text/javascript" src="/javascript/estrenos.js">
+      
+          </script>
+
+      <% }else if (pagina == "fav"){ %>
+        <script type="text/javascript" src="/javascript/general.js">
+      
+        </script>
+          <script type="text/javascript" src="/javascript/favoritas.js">
+      
+          </script>
+
+      <% }else if (pagina == "generos"){ %>
+
+        <script type="text/javascript" src="/javascript/general.js">
+      
+        </script>
+          <script type="text/javascript" src="/javascript/generos.js">
+      
+          </script>
+      <% }else if (pagina == "popular"){ %>
+        <script type="text/javascript" src="/javascript/general.js">
+      
+        </script>
+          <script type="text/javascript" src="/javascript/popular.js">
+      
+          </script>
+
+      <% }else if (pagina == "prox"){ %>
+
+        <script type="text/javascript" src="/javascript/general.js">
+      
+        </script>
+          <script type="text/javascript" src="/javascript/prox.js">
+      
+          </script>
+      <% }else if (pagina == "top100"){ %>
+        <script type="text/javascript" src="/javascript/general.js">
+      
+        </script>
+          <script type="text/javascript" src="/javascript/top100.js">
+      
+          </script>
+    <% } %>
+
+
+   
     
-    <script type="text/javascript" src="/javascript/detalle.js">
-    
-    </script>
+  
