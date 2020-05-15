@@ -32,27 +32,27 @@
 
     <% }else if (pagina == "estrenos"){ %>
       <link rel="stylesheet" href="/stylesheets/style.css" />
-      <link rel="stylesheet" href="./stylesheets/estrenos.css" />
+      <link rel="stylesheet" href="/stylesheets/estrenos.css" />
 
     <% }else if (pagina == "fav"){ %>
       <link rel="stylesheet" href="/stylesheets/style.css" />
-      <link rel="stylesheet" href="./stylesheets/fav.css" />
+      <link rel="stylesheet" href="/stylesheets/fav.css" />
 
     <% }else if (pagina == "generos"){ %>
       <link rel="stylesheet" href="/stylesheets/style.css" />
-      <link rel="stylesheet" href="./stylesheets/generos.css" />
+      <link rel="stylesheet" href="/stylesheets/generos.css" />
 
     <% }else if (pagina == "popular"){ %>
       <link rel="stylesheet" href="/stylesheets/style.css" />
-      <link rel="stylesheet" href="./stylesheets/popular.css" />
+      <link rel="stylesheet" href="/stylesheets/popular.css" />
 
     <% }else if (pagina == "prox"){ %>
       <link rel="stylesheet" href="/stylesheets/style.css" />
-      <link rel="stylesheet" href="./stylesheets/prox.css" />
+      <link rel="stylesheet" href="/stylesheets/prox.css" />
 
     <% }else if (pagina == "top100"){ %>
       <link rel="stylesheet" href="/stylesheets/style.css" />
-      <link rel="stylesheet" href="./stylesheets/top100.css" />
+      <link rel="stylesheet" href="/stylesheets/top100.css" />
     <% } %>
     
 
@@ -85,7 +85,7 @@
             <li class="w3-container">
               <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black " id="login">LOG IN</button>
               <button type="button" name="button" class="boton_logOut"> <p class="boton_log_out">LOG OUT</p></button>
-              <a href="favoritas.html" class="preferidas">Peliculas favoritas</a>
+              <a href="/home/favoritas" class="preferidas">Peliculas favoritas</a>
               <div id="id01" class="w3-modal w3-animate-opacity">
                 <div class="w3-modal-content w3-card-4">
                   <div class="wrapper">
@@ -115,7 +115,7 @@
               </div>
             </li>
             <li class="topnav">
-              <form action="/buscar" method="get" class="busqueda">
+              <form action="/buscar/" method="GET" class="busqueda">
                 <input type="text" placeholder="Search.." name="buscador" class="texto-busqueda">
                 <button type="submit" class="button_buscador"><i class="fa fa-search"></i></button>
               </form>

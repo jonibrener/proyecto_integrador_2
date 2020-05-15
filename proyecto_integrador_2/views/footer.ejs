@@ -1,24 +1,6 @@
 <footer>
-    <div class="padre-footer">
+   
     
-      <div class="copyright">
-          <h2 class="nombresDelFooter">Tobias Volberg</h2>
-    
-      </div>
-      <div class="copyright">
-        <h2 class="nombresDelFooter">Jonathan Brener</h2>
-      </div>
-      <div class="copyright">
-        <h2 class="nombresDelFooter">Julian Tabacman</h2>
-      </div>
-    </div>
-    
-        </footer>
-        </div>
-      </body>
-    
-    </html>
-
     <% if (pagina == "home"){ %>
       <script type="text/javascript" src="/javascript/index.js">
     
@@ -26,7 +8,7 @@
       <script type="text/javascript" src="/javascript/general.js">
       
       </script>
-    <% }else if (pagina == "detalle"){ %>
+    <% } else if (pagina == "detalle"){ %>
     
       <script type="text/javascript" src="/javascript/general.js">
       
@@ -34,7 +16,7 @@
       <script type="text/javascript" src="/javascript/detallePelicula.js">
       
       </script>
-      <% }else if (pagina == "busqueda"){ %>
+      <% } else if (pagina == "busqueda"){ %>
         <script type="text/javascript" src="/javascript/general.js">
       
         </script>
@@ -42,7 +24,7 @@
       
           </script>
 
-      <% }else if (pagina == "estrenos"){ %>
+      <% } else if (pagina == "estrenos"){ %>
         <script type="text/javascript" src="/javascript/general.js">
       
         </script>
@@ -50,7 +32,7 @@
       
           </script>
 
-      <% }else if (pagina == "fav"){ %>
+      <% } else if (pagina == "fav"){ %>
         <script type="text/javascript" src="/javascript/general.js">
       
         </script>
@@ -58,15 +40,30 @@
       
           </script>
 
-      <% }else if (pagina == "generos"){ %>
+      <% } else if (pagina == "generos"){ %>
 
+        <script type="text/javascript" src="/javascript/generos.js">
+      
+        </script>
         <script type="text/javascript" src="/javascript/general.js">
       
         </script>
-          <script type="text/javascript" src="/javascript/generos.js">
-      
-          </script>
-      <% }else if (pagina == "popular"){ %>
+         <div class="padre-footer">
+    
+          <div class="copyright">
+              <h2 class="nombresDelFooter">Tobias Volberg</h2>
+        
+          </div>
+          <div class="copyright">
+            <h2 class="nombresDelFooter">Jonathan Brener</h2>
+          </div>
+          <div class="copyright">
+            <h2 class="nombresDelFooter">Julian Tabacman</h2>
+          </div>
+        </div>
+        
+          
+      <% } else if (pagina == "popular"){ %>
         <script type="text/javascript" src="/javascript/general.js">
       
         </script>
@@ -74,7 +71,7 @@
       
           </script>
 
-      <% }else if (pagina == "prox"){ %>
+      <% } else if (pagina == "prox"){ %>
 
         <script type="text/javascript" src="/javascript/general.js">
       
@@ -91,7 +88,9 @@
           </script>
     <% } %>
 
-
-   
     
-  
+  </footer>
+</div>
+</body>
+
+</html>
