@@ -24,7 +24,7 @@ fetch(urlGeneros)
     li="<article class='peliculasGeneros'>"
     li+= '<a href="/home/detalle?id='
     li += id
-    li +=">"
+    li +='">'
     li+= "<img class='generos-imagenes' src='https://image.tmdb.org/t/p/original"
     li+=imagen
     li+= "' alt='img producto'>"

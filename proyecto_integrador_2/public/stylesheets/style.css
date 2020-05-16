@@ -1392,7 +1392,7 @@ margin-top: 10%;
 
 section div.contenedor {
   overflow: hidden;
-  display: none;
+  /* display: none; */
 }
 
 section div.subtitulo2{
