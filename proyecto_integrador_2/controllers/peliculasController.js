@@ -41,15 +41,23 @@ let peliculasController = {
         var prueba10 = "hola"
         res.render('registro', {prueba10:prueba10, pagina:"registro"})
     },
-    update: function(req,res){
-        var name = req.body.name
 
-        var email = req.body.email
+    creacion: function(req,res){
+        // var name = req.body.name
 
-        var password = req.body.password
+       // var email = req.body.email
+
+       // var password = req.body.password 
+
+
+        db.users.create({
+            user_name = req.body.name,
+            user_email = req.body.email,
+            user_pass = req.body.password
+        })
 
         res.redirect('/home')
-        
+
     }
     
 }
