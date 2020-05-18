@@ -44,15 +44,15 @@ fetch("https://api.themoviedb.org/3/search/movie?api_key=7beff09c9fd5a79010c5ce4
         imagen = "https://image.tmdb.org/t/p/original" + informacion.results[i].poster_path
       }
       var li= "<article class='peliculas'>"
-      li+= '<a href="/home/detalle/'
+      li+= '<a href="/home/detalle?id='
       li += id
-      li +=">"
+      li +='">'
       li+= "<img class='estrenos-imagenes' src='"
       li+= imagen
       li+= "' alt='img producto'><h2 class='titulo-producto'>"
-      li+='<a href="/home/detalle/'
-      li+=id
-      li+= ">"
+      li+= '<a href="/home/detalle?id='
+      li += id
+      li +='">'
       li+= titulo
       li+="</a></h2></article>"
 
@@ -80,15 +80,15 @@ fetch("https://api.themoviedb.org/3/search/movie?api_key=7beff09c9fd5a79010c5ce4
             imagen = "https://image.tmdb.org/t/p/original" + informacion.results[i].poster_path
           }
           var li= "<article class='peliculas'>"
-          li+= '<a href="/home/detalle/'
+          li+= '<a href="/home/detalle?id='
           li += id
-          li +=">"
+          li +='">'
           li+= "<img class='estrenos-imagenes' src='"
           li+= imagen
           li+= "' alt='img producto'><h2 class='titulo-producto'>"
-          li+='<a href="/home/detalle/'
-          li+=id
-          li+= ">"
+          li+= '<a href="/home/detalle?id='
+          li += id
+          li +='">'
           li+= titulo
           li+="</a></h2></article>"
 

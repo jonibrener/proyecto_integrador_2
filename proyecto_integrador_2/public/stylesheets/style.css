@@ -130,6 +130,11 @@ width: 22%;
   border: white;
  border-style: double;
 }
+img.detalle-imagenes {
+  max-width: 100%;
+  border: white;
+ border-style: double;
+}
 
 a{
   color: white;
@@ -1290,7 +1295,13 @@ button.w3-button.w3-black {
 }
 img.generos-imagenes{
   align-items: center;
+  width: 100%;
+}
+
+img.detalle-imagenes{
+  align-items: center;
   width: 30%;
+}
 }
 h2.nombre{
   margin-top: 3%;

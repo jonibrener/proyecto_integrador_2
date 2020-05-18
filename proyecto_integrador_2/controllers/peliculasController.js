@@ -8,7 +8,7 @@ let peliculasController = {
         res.render('detalle', {prueba2:prueba2, pagina:"detalle"})
     },
     buscador: function (req,res){
-        var prueba3 = req.params.nombre
+        var prueba3 = req.params.busqueda
         res.render('buscador', {prueba3:prueba3, pagina: "busqueda"})
     },
     genero : function(req,res){

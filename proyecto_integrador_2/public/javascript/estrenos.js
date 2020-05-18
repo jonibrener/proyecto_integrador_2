@@ -28,9 +28,9 @@ fetch(urlEstrenos)
     li +="' alt='img producto'>"
 
     li += "<h2 class='titulo-producto'>"
-    li += '<a href="/home/detalle/'
+    li+= '<a href="/home/detalle?id='
     li += id
-    li +=">"
+    li +='">'
     li +=titulo
     li +="</a></h2></article>"
     // document.querySelector(".contenedor").innerHTML += "<article class='peliculas'><img class='estrenos-imagenes' src='https://image.tmdb.org/t/p/original" + imagen + "' alt='img producto'><h2 class='titulo-producto'><a href=detallePelicula.html?id=" + id +  ">" + titulo + "</a></h2></article>"

@@ -307,5 +307,10 @@ button.subtitulo {
         position: relative;
         bottom: 42px;
         left: 471px;}
+
+    img.generos-imagenes{
+      align-items: center;
+      width: 30%;
+    }
       }
         

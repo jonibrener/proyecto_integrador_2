@@ -71,5 +71,9 @@ width: 26%;
     right: -200px;
     background-color: gainsboro;
 }
+.generos-imagenes {
+  align-items: center;
+  width: 100%;
+}
 
 }

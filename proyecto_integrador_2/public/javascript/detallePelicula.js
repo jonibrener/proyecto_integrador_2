@@ -22,7 +22,7 @@ fetch(detallePelicula)
 .then(function(informacion) {
   console.log(informacion);
   document.querySelector(".titulo").innerHTML = informacion.title
-  document.querySelector(".poster").innerHTML = "<img class='generos-imagenes' src='https://image.tmdb.org/t/p/original" + informacion.poster_path + "' alt='img producto'>"
+  document.querySelector(".poster").innerHTML = "<img class='detalle-imagenes' src='https://image.tmdb.org/t/p/original" + informacion.poster_path + "' alt='img producto'>"
   document.querySelector(".sinopsis").innerHTML = "Sinopsis:" + " " + informacion.overview
   document.querySelector(".lenguaje").innerHTML = "Lenguaje original:" + " " + informacion.original_language
   var generos = informacion.genres.map(function(genero){
@@ -104,13 +104,12 @@ fetch(recomendacionPelicula)
     // document.querySelector(".contenedor").innerHTML += "<article class='peliculas'><img class='estrenos-imagenes' src='https://image.tmdb.org/t/p/original" + imagen + "' alt='img producto'><h2 class='titulo-producto'><a href=detallePelicula.html?id=" + id +  ">" + titulo + "</a></h2></article>"
     document.querySelector(".contenedor").innerHTML += li
   }
-
 })
-
-
-
 })
+document.querySelector("div.contenedor").style.display= "none"
+
 function recomendaciones(){
+
   document.querySelector("div.contenedor").style.display= "block"
   document.querySelector(".subtitulo").style.display="none"
   document.querySelector(".subtitulo2").style.display = "block"
