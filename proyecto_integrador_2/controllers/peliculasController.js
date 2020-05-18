@@ -1,4 +1,5 @@
 let db = require('../database/models')
+let bcrypt = require('bcrypt');
 
 let peliculasController = {
     home: function(req,res){
@@ -48,12 +49,15 @@ let peliculasController = {
        // var email = req.body.email
 
        // var password = req.body.password 
+       const hash = bcrypt.hashSync(req.body.password, 10);
+
 
 
         db.users.create({
-            user_name = req.body.name,
-            user_email = req.body.email,
-            user_pass = req.body.password
+            user_name: req.body.name,
+            user_email: req.body.email,
+            user_pass: hash,
+
         })
 
         res.redirect('/home')
