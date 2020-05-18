@@ -1,4 +1,4 @@
-
+let db = require('../database/models')
 
 let peliculasController = {
     home: function(req,res){
@@ -40,6 +40,16 @@ let peliculasController = {
     registro: function (req,res){
         var prueba10 = "hola"
         res.render('registro', {prueba10:prueba10, pagina:"registro"})
+    },
+    update: function(req,res){
+        var name = req.body.name
+
+        var email = req.body.email
+
+        var password = req.body.password
+
+        res.redirect('/home')
+        
     }
     
 }

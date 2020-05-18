@@ -1,18 +1,18 @@
 <%- include('header')%>
 
 <h1>Registrate:</h1>
-<form action="/home" method="POST">
+<form action="/home/registro" method="POST">
     <label for="name">NOMBRE DE USUARIO:</label>
-    <input type="text" placeholder="Inserte su nombre aqui">
+    <input name='name' type="text" placeholder="Inserte su nombre aqui">
     <br>
     <label for="email">EMAIL:</label>
-    <input type="email"placeholder="Inserte su email aqui">
+    <input name='email' type="email"placeholder="Inserte su email aqui">
     <br>
     <label for="">PASSWORD:</label>
-    <input type="text" placeholder="Inserte su password aqui">
+    <input name='password' type="text" placeholder="Inserte su password aqui">
     <br>
     <label for="birthday">FECHA DE NACIMIENTO:</label>
-    <input type="date">
+    <input name='birthday' type="date">
     <br>
     <button type="submit">ENVIAR</button>
 </form>
