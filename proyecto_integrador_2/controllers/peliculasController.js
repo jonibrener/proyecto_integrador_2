@@ -34,6 +34,10 @@ let peliculasController = {
     favoritas : function (req, res){
         var prueba9 = "hola"
         res.render('favoritas', {prueba9:prueba9, pagina: "fav"})
+    },
+    registro: function (req,res){
+        var prueba10 = "hola"
+        res.render('registro', {prueba10:prueba10, pagina:"registro"})
     }
     
 }

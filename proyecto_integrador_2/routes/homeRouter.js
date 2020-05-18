@@ -11,5 +11,6 @@ router.get('/populares', peliculasController.populares)
 router.get('/mejores', peliculasController.mejores)
 router.get('/proximas', peliculasController.proximas)
 router.get('/favoritas', peliculasController.favoritas)
+router.get('/registro', peliculasController.registro)
 
 module.exports = router;
