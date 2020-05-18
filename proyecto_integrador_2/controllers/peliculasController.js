@@ -1,3 +1,5 @@
+
+
 let peliculasController = {
     home: function(req,res){
         var prueba = 'hola'
