@@ -57,6 +57,7 @@ let peliculasController = {
             user_name: req.body.name,
             user_email: req.body.email,
             user_pass: hash,
+            user_bornDate: req.body.birthday, 
 
         })
 
