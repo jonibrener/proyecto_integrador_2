@@ -13,6 +13,9 @@ router.get('/proximas', peliculasController.proximas)
 router.get('/favoritas', peliculasController.favoritas)
 router.get('/registro', peliculasController.registro)
 router.post('/registro', peliculasController.creacion)
+router.get('/login', peliculasController.login)
+router.post('/login', peliculasController.comparacion)
+
 
 
 module.exports = router;

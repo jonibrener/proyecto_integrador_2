@@ -63,6 +63,13 @@ let peliculasController = {
 
         res.redirect('/home')
 
+    },
+    login: function(req,res){
+        var prueba11 = "hola"
+        res.render('login', {prueba11:prueba11, pagina:"login"})
+    },
+    comparacion: function(req,res){
+        
     }
     
 }

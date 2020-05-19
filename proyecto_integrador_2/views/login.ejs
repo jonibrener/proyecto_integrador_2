@@ -1,0 +1,15 @@
+<%- include('header') %>
+<h1>INICIA SESION</h1>
+
+<form action="/home/login" method="POST">
+    <label for="email">EMAIL:</label>
+    <input name='email' type="email"placeholder="Inserte su email aqui">
+    <br>
+    <label for="">PASSWORD:</label>
+    <input name='password' type="password" placeholder="Inserte su password aqui">
+    <br>
+    <button type="submit">INGRESAR</button>
+
+</form>
+
+<%- include('footer') %>
