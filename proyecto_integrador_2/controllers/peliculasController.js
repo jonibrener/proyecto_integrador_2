@@ -69,7 +69,34 @@ let peliculasController = {
         res.render('login', {prueba11:prueba11, pagina:"login"})
     },
     comparacion: function(req,res){
+       
+    },
+    creacionResenias: function(req, res){
+        var prueba12 = "hola"
+        res.render('detalle', {prueba12:prueba12, pagina:"detalle"})
+    },
+    envioResenias: function(req,res){
+        // var queryString = new URLSearchParams(location.search);
+        // var detalles = queryString.get('id');
+        var detalles = req.params.id
+        db.resenias.create({
+            resenia_text: req.body.resenia,
+            movie_score: req.body.quantity,
+            movie_id: detalles,
+        })
+        // var today = new Date();
+        // var dd = String(today.getDate()).padStart(2, '0');
+        // var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        // var yyyy = today.getFullYear();
+        // today = mm + '/' + dd + '/' + yyyy;
+        // // document.write(today);
+        // console.log(today);
         
+        
+        
+        
+        
+        res.redirect('/home')
     }
     
 }

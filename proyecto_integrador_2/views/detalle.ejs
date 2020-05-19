@@ -20,7 +20,24 @@
           </ul>
           <iframe id="trailer" width="560" height="315" src="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
+  </section>
+  <section>
+      <h1>ESCRIBI TU RESEÑA:</h1>
+          <form action="/home/resenia" method="post">
+              <label for="email">EMAIL:</label>
+              <input type="email" name="email">
+              <br>
+              <label for="password">CONTRASEÑA:</label>
+              <input type="password" name="password">
+              <br>
+              <label for="resenia">RESEÑA:</label>
+              <textarea name="resenia" rows="5" cols="50" placeholder="ESCRIBI TU RESEÑA AQUI"></textarea>
+              <br>
+              <label for="quantity">PUNTAJE (entre 1 y 10):</label>
+              <input type="number" id="quantity" name="quantity" min="1" max="10">
+              <br>
+              <button type="submit">SUBIR RESEÑA</button>
+          </form>
   </section>
 
   <section id="estrenos" class="section-estrenos">
