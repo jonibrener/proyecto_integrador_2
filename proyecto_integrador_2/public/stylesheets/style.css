@@ -90,6 +90,20 @@ nav li.li-menu {
     width: 10%;
     height: 5vh;
 }
+#registrate{
+  position: relative;
+    top: -19px;
+    right: -50px;
+    width: 10%;
+    height: 5vh;
+}
+#login{
+  position: relative;
+    top: -19px;
+    right: -100px;
+    width: 10%;
+    height: 5vh;
+}
 nav li.li-menu:hover{
 
 }
