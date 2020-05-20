@@ -1574,4 +1574,25 @@ button.subtitulo {
             width: 10%;
             height: 5vh;
         }
-        
+        h1.resenia{
+          color: white;
+          font-weight: normal;
+        }
+        label.email{
+          color: white;
+          margin-left: 4%;
+        }
+        label.password{
+          color: white;
+        }
+        label.quantity{
+          color: white;
+        }
+        label.resenia{
+          color: white;
+          margin-left: 3%;
+
+        }
+        button.subir{
+          width: 24%;
+        }
