@@ -1,5 +1,6 @@
 let db = require('../database/models')
 let bcrypt = require('bcrypt');
+var moment = require('moment')
 
 let peliculasController = {
     home: function(req,res){
@@ -79,6 +80,9 @@ let peliculasController = {
         // var queryString = new URLSearchParams(location.search);
         // var detalles = queryString.get('id');
         var detalles = req.params.id
+        var date = moment().format("MMM Do YY")
+        //No se si funciona esto del date, faltaria mandarlo a la base de datos, pero por las dudas no mande
+        
         db.resenias.create({
             resenia_text: req.body.resenia,
             movie_score: req.body.quantity,
