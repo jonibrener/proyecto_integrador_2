@@ -97,13 +97,7 @@ nav li.li-menu {
     width: 10%;
     height: 5vh;
 }
-#login{
-  position: relative;
-    top: -19px;
-    right: -100px;
-    width: 10%;
-    height: 5vh;
-}
+
 nav li.li-menu:hover{
 
 }
@@ -1572,4 +1566,12 @@ button.subtitulo {
         position: relative;
         bottom: 42px;
         left: 471px;}}
+
+   #login1{
+          position: relative;
+            top: -19px;
+            left: 90px;
+            width: 10%;
+            height: 5vh;
+        }
         
