@@ -13,6 +13,8 @@ border-style: double;
 border-color: black;
 text-align: center;
 top: 10%;
+position: relative;
+bottom: -35px;
 }
 ul.info{
   text-align: center;

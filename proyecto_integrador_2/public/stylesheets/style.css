@@ -1406,6 +1406,7 @@ height: 6vh;
 margin-left: 35%;
 margin-bottom: 4%;
 margin-top: 10%;
+margin-left: 1%;
 }
 
 
@@ -1435,6 +1436,7 @@ section div.subtitulo2{
     margin-left: 35%;
     margin-bottom: 4%;
     margin-top: 10%;
+    margin-left: 1%;
 }
 
 article.peliculas{
@@ -1482,6 +1484,24 @@ article.peliculas:nth-child(3n){
 
 button.subtitulo {
     font-size: 14px;
+    background-color: white;
+    color: black;
+    width: 33%;
+    margin: 0 auto;
+    border-radius: 20px;
+    border-style: double;
+    border-color: black;
+    text-align: center;
+    top: 10%;
+    height: 8vh;
+    margin-left: 35%;
+    margin-bottom: 4%;
+    margin-top: 10%;
+    padding-top: 0px;
+}
+
+button.subtituloResenia{
+  font-size: 14px;
     background-color: white;
     color: black;
     width: 33%;
@@ -1596,3 +1616,101 @@ button.subtitulo {
         button.subir{
           width: 24%;
         }
+
+        button.subtitulo2Resenia{
+          display: none;
+        }
+
+        section.contenedorFormulario{
+          display: block;
+        }
+
+        button.cancelarEnvio{
+          display: none;
+        }
+
+        button.subtituloResenia{
+          font-size: 14px;
+            background-color: white;
+            color: black;
+            width: 30%;
+            margin: 0 auto;
+            border-radius: 20px;
+            border-style: double;
+            border-color: black;
+            text-align: center;
+            top: 10%;
+            height: 6vh;
+            margin-left: 35%;
+            margin-bottom: 4%;
+            margin-top: -5%;
+            padding-top: 0px;
+            position: relative;
+    top: -100px;
+        }
+
+        /* button.subtitulo2Resenia{
+          font-size: 14px;
+            background-color: white;
+            color: black;
+            width: 30%;
+            margin: 0 auto;
+            border-radius: 20px;
+            border-style: double;
+            border-color: black;
+            text-align: center;
+            top: 10%;
+            height: 6vh;
+            margin-left: 35%;
+            margin-bottom: 4%;
+            margin-top: -5%;
+            padding-top: 0px;
+            position: relative;
+    top: -100px;
+        } */
+/* 
+        button.subtitulo2Resenia{
+          font-size: 14px;
+            background-color: white;
+            color: black;
+            width: 30%;
+            margin: 0 auto;
+            border-radius: 20px;
+            border-style: double;
+            border-color: black;
+            text-align: center;
+            top: 10%;
+            height: 6vh;
+            margin-left: 35%;
+            margin-bottom: 4%;
+            margin-top: -5%;
+            padding-top: 0px;
+            position: relative;
+    top: -100px;
+        } */
+
+      button.subtituloInsertarResenia{  font-size: 14px;
+            background-color: white;
+            color: black;
+            width: 30%;
+            margin: 0 auto;
+            border-radius: 20px;
+            border-style: double;
+            border-color: black;
+            text-align: center;
+            top: 10%;
+            height: 6vh;
+            margin-left: 35%;
+            margin-bottom: 4%;
+            margin-top: -5%;
+            padding-top: 0px;
+            position: relative;
+            top: -198px;
+            left: 33%;
+  }
+
+  button.cancelarEnvio{
+    
+  }
+
+

@@ -105,22 +105,99 @@ fetch(recomendacionPelicula)
     document.querySelector(".contenedor").innerHTML += li
   }
 })
+// var li
+// li =  '<section>'
+// li += '<h1 class="resenia">ESCRIBI TU RESEÑA:</h1>'
+// li += '<form action="/home/resenia" method="post">'
+// li +=   '<label for="email" class="email">EMAIL:</label>'
+// li +=   '<input type="email" name="email">'
+// li +=   '<br>'
+// li +=   '<label for="password" class="password">CONTRASEÑA:</label>'
+// li +=   '<input type="password" name="password">'
+// li +=   '<br>'
+// li +=   '<label for="resenia" class="resenia">RESEÑA:</label>'
+// li +=   '<textarea name="resenia" rows="5" cols="50" placeholder="ESCRIBI TU RESEÑA AQUI"></textarea>'
+// li +=   '<br>'
+// li +=   '<label for="quantity" class="quantity">PUNTAJE (entre 1 y 10):</label>'
+// li +=   '<input type="number" id="quantity" name="quantity" min="1" max="10">'
+// li +=   '<br>'
+// li +=   '<button type="submit" class="subir">SUBIR RESEÑA</button>'
+// li += '</form>'
+// li += '</section>'
+// document.querySelector(".contenedorInsertarResenia").innerHTML += li
 })
+
 document.querySelector("div.contenedor").style.display= "none"
+document.querySelector("div.contenedorInsertarResenia").style.display= "none"
+document.querySelector("div.subtitulo2Resenia").style.display= "none"
+document.querySelector("div.contenedorResenias").style.display= "none"
+document.querySelector(".cancelarEnvio").style.display = "none"
 
 function recomendaciones(){
 
   document.querySelector("div.contenedor").style.display= "block"
   document.querySelector(".subtitulo").style.display="none"
   document.querySelector(".subtitulo2").style.display = "block"
+  document.querySelector(".subtituloResenia").style.display = "none"
+  document.querySelector(".subtitulo2Resenia").style.display = "none"
+  document.querySelector(".subtituloInsertarResenia").style.display = "none"
+  document.querySelector("div.contenedorInsertarResenia").style.display= "none"
+  document.querySelector(".cancelarEnvio").style.display = "none"
 }
 
 function recomendaciones2(){
   document.querySelector("div.contenedor").style.display= "none"
   document.querySelector(".subtitulo2").style.display = "none"
   document.querySelector(".subtitulo").style.display = "block"
+  document.querySelector(".subtituloInsertarResenia").style.display = "block"
+  document.querySelector(".subtituloResenia").style.display = "block"
+  document.querySelector("div.contenedorInsertarResenia").style.display= "none"
+  document.querySelector(".cancelarEnvio").style.display = "none"
 }
 
+function resenias(){
+  document.querySelector(".subtitulo2Resenia").style.display = "block"
+  document.querySelector("div.contenedor").style.display= "none"
+  document.querySelector(".subtitulo").style.display="none"
+  document.querySelector(".subtitulo2").style.display = "none"
+  document.querySelector(".subtitulo2Resenia").style.display = "block"
+  document.querySelector(".subtituloInsertarResenia").style.display = "none"
+  document.querySelector(".subtituloResenia").style.display = "none"
+  document.querySelector("div.contenedorInsertarResenia").style.display= "none"
+  document.querySelector(".cancelarEnvio").style.display = "none"
+}
+
+function resenias2(){
+  document.querySelector("div.contenedor").style.display= "none"
+  document.querySelector(".subtitulo2").style.display = "none"
+  document.querySelector(".subtitulo").style.display = "block"
+  document.querySelector(".subtituloResenia").style.display = "block"
+  document.querySelector(".subtituloInsertarResenia").style.display = "block"
+  document.querySelector(".subtitulo2Resenia").style.display = "none"
+  document.querySelector("div.contenedorInsertarResenia").style.display= "none"
+  document.querySelector(".cancelarEnvio").style.display = "none"
+}
+function insertarResenia(){
+  document.querySelector(".subtituloInsertarResenia").style.display = "none"
+  document.querySelector(".subtituloResenia").style.display = "none"
+  document.querySelector(".cancelarEnvio").style.display = "block"
+  document.querySelector("div.contenedorInsertarResenia").style.display= "block"
+  document.querySelector("div.contenedor").style.display= "none"
+  document.querySelector(".subtitulo").style.display="none"
+  document.querySelector(".subtitulo2").style.display = "none"
+  document.querySelector(".div.contenedorInsertarResenia").style.display = "block"
+  document.querySelector(".section.contenedorFormulario").style.display = "block"
+  
+  
+}
+
+function cancelarForm(){
+  document.querySelector(".contenedorInsertarResenia").style.display = "none"
+  document.querySelector(".cancelarEnvio").style.display = "none"
+  document.querySelector(".subtituloInsertarResenia").style.display = "block"
+  document.querySelector(".subtituloResenia").style.display = "block"
+  document.querySelector(".subtitulo").style.display="block"
+}
 
 function marcarComoFavorito() {
   var queryString = new URLSearchParams(location.search);

@@ -21,24 +21,7 @@
           <iframe id="trailer" width="560" height="315" src="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
   </section>
-  <section>
-      <h1 class="resenia">ESCRIBI TU RESEÑA:</h1>
-          <form action="/home/resenia" method="post">
-              <label for="email" class="email">EMAIL:</label>
-              <input type="email" name="email">
-              <br>
-              <label for="password" class="password">CONTRASEÑA:</label>
-              <input type="password" name="password">
-              <br>
-              <label for="resenia" class="resenia">RESEÑA:</label>
-              <textarea name="resenia" rows="5" cols="50" placeholder="ESCRIBI TU RESEÑA AQUI"></textarea>
-              <br>
-              <label for="quantity" class="quantity">PUNTAJE (entre 1 y 10):</label>
-              <input type="number" id="quantity" name="quantity" min="1" max="10">
-              <br>
-              <button type="submit" class="subir">SUBIR RESEÑA</button>
-          </form>
-  </section>
+ 
 
   <section id="estrenos" class="section-estrenos">
     <br>
@@ -48,6 +31,43 @@
     <div class="contenedor">
 
     </div>
+
+  
+    <button onclick="resenias()" class="subtituloResenia" type="button" name="button"> Ver Reseñas...</button>
+    <button onclick="resenias2()" class="subtitulo2Resenia" type="button" name="button"> Ver Menos Reseñas...</button>
+  
+
+    <div class="contenedorResenias">
+
+    </div>
+
+    
+    <button onclick="insertarResenia()" class="subtituloInsertarResenia" type="button" name="button"> Insertar una Reseña...</button>
+    <button onclick="cancelarForm()" class="cancelarEnvio" type="button" name="button"> Cancelar</button>
+   
+    <div class="contenedorInsertarResenia">
+
+    <section class="contenedorFormulario">
+       <h1 class="resenia">ESCRIBI TU RESEÑA:</h1>
+       <form action="/home/resenia" method="post">
+       <label for="email" class="email">EMAIL:</label>
+       <input type="email" name="email">
+       <br>
+       <label for="password" class="password">CONTRASEÑA:</label>
+       <input type="password" name="password">
+       <br>
+       <label for="resenia" class="resenia">RESEÑA:</label>
+       <textarea name="resenia" rows="5" cols="50" placeholder="ESCRIBI TU RESEÑA AQUI"></textarea>
+       <br>
+      <label for="quantity" class="quantity">PUNTAJE (entre 1 y 10):</label>
+      <input type="number" id="quantity" name="quantity" min="1" max="10">
+     <br>
+       <button type="submit" class="subir">SUBIR RESEÑA</button>
+
+       </form>
+      </section>
+    </div>
+
 
   </section>
 
