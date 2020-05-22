@@ -1,6 +1,7 @@
 let db = require('../database/models')
 let bcrypt = require('bcryptjs');
 var moment = require('moment')
+let moduloLogin = require('../modulo-login')
 
 let peliculasController = {
     home: function(req,res){
