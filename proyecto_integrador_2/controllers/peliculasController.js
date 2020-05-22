@@ -71,7 +71,20 @@ let peliculasController = {
         res.render('login', {prueba11:prueba11, pagina:"login"})
     },
     comparacion: function(req,res){
-       
+       moduloLogin.chequearUsuario(req.body.email)
+       .then(resultado => {
+           res.send("el email esta en la base de datos")
+       })
+
+       moduloLogin.buscarPorEmail(req.body.email)
+       .then(resultado=> {
+           res.send("objeto literal de datos del usuario")
+       })
+
+       moduloLogin.validar(req.body.email , req.body.password)
+       .then(resultado =>{
+           res.send('objeto literal de datos del usuario')
+       })
     },
     creacionResenias: function(req, res){
         var prueba12 = "hola"
