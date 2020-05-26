@@ -73,7 +73,8 @@ let peliculasController = {
     comparacion: function(req,res){
        moduloLogin.chequearUsuario(req.body.email)
        .then(resultado => {
-           res.send("el email esta en la base de datos")
+        //    res.send("el email esta en la base de datos")
+           res.render('login', {resultado:resultado})
        })
 
        moduloLogin.buscarPorEmail(req.body.email)
