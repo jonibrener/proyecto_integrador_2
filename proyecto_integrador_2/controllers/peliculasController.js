@@ -75,17 +75,37 @@ let peliculasController = {
        .then(resultado => {
         //    res.send("el email esta en la base de datos")
         //    res.render('login', {resultado:resultado})
+
+        if (resultado == false){
+        console.log("el email no esta en la base de datos");
+
+        }
+        else{
+            console.log("el email esta en la base de datos");
+           
+            moduloLogin.buscarPorEmail(req.body.email)
+             .then(usuario =>{
+           console.log('objeto literal con datos')
+           console.log(req.body.password);
+           console.log(usuario.user_pass);
+           console.log(bcrypt.compareSync(req.body.password, usuario.user_pass));
+           
+           
+           
+           if (bcrypt.compareSync(req.body.password, usuario.user_pass)){
+               res.send('logueado con exito')
+
+           }
+           else{
+               res.send('datos invalidos')
+           }
+
+       
+       })
+        }
        })
 
-       moduloLogin.buscarPorEmail(req.body.email)
-       .then(resultado=> {
-           res.send("objeto literal de datos del usuario")
-       })
-
-       moduloLogin.validar(req.body.email , req.body.password)
-       .then(resultado =>{
-           res.send('objeto literal de datos del usuario')
-       })
+       
     },
     creacionResenias: function(req, res){
         var prueba12 = "hola"
