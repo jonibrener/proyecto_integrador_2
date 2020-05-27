@@ -136,6 +136,7 @@ let peliculasController = {
                        console.log('logueado con exito' + nombre);
                        var detalles = req.params.id
                     //    var date = moment().format("MMM Do YY")
+                       
                        //No se si funciona esto del date, faltaria mandarlo a la base de datos, pero por las dudas no mande
                        
                        db.resenias.create({
