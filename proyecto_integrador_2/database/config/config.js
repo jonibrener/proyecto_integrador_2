@@ -7,7 +7,6 @@ module.exports =
     "database": "proyecto",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "operatorsAliases": false,
     // 'port': 8889
   },
   "test": {
