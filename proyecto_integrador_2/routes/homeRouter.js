@@ -3,8 +3,8 @@ var router = express.Router();
 var peliculasController = require('../controllers/peliculasController')
 
 router.get('/', peliculasController.home)
-router.get('/detalle', peliculasController.detalle, peliculasController.creacionResenias)
-router.post('/detalle', peliculasController.envioResenias)
+router.get('/detalle', peliculasController.detalle)
+router.post('/detalle/:id', peliculasController.envioResenias)
 router.get('/buscar', peliculasController.buscador)
 router.get ('/genero', peliculasController.genero)
 router.get('/estrenos', peliculasController.estrenos)

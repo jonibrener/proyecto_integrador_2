@@ -9,8 +9,8 @@ let peliculasController = {
         res.render('home', {prueba:prueba, pagina: "home"})
     },
     detalle: function(req,res){
-        var prueba2 = req.params.id
-        res.render('detalle', {prueba2:prueba2, pagina:"detalle"})
+        var id = req.params.id
+        res.render('detalle', {id:id, pagina:"detalle"})
     },
     buscador: function (req,res){
         var prueba3 = req.params.busqueda

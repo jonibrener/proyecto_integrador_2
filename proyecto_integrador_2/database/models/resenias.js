@@ -11,7 +11,7 @@ module.exports = function (sequelize, DataTypes){
         },
         user_id: {
             type: DataTypes.INTEGER,
-            foreignKey: true
+            // foreignKey: true
         },
         resenia_text: {
             type: DataTypes.STRING
@@ -31,6 +31,7 @@ module.exports = function (sequelize, DataTypes){
         timestamps: false,
         tableName: 'resenias'
     }
+    
     
     
     const resenias = sequelize.define('resenias', cols, config)
