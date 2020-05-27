@@ -93,7 +93,11 @@ let peliculasController = {
            
            
            if (bcrypt.compareSync(req.body.password, usuario.user_pass)){
-               res.send('logueado con exito')
+               var nombre = usuario.user_name
+               var idUsusario = usuario.user_id
+               res.send('logueado con exito ' + nombre + 'con id: ' + idUsusario)
+            // res.render('header', {usuario.user_name: usuario.user_name})
+            // res.render('header', {nombre:null})
 
            }
            else{
@@ -112,28 +116,42 @@ let peliculasController = {
         res.render('detalle', {prueba12:prueba12, pagina:"detalle"})
     },
     envioResenias: function(req,res){
-        // var queryString = new URLSearchParams(location.search);
-        // var detalles = queryString.get('id');
-        var detalles = req.params.id
-        var date = moment().format("MMM Do YY")
-        //No se si funciona esto del date, faltaria mandarlo a la base de datos, pero por las dudas no mande
-        
-        db.resenias.create({
-            resenia_text: req.body.resenia,
-            movie_score: req.body.quantity,
-            movie_id: detalles,
+        moduloLogin.chequearUsuario(req.body.email)
+        .then(resultado => {
+            if (resultado == false){
+                console.log("el email no esta en la base de datos");
+                 }
+                else{
+                    console.log("el email esta en la base de datos");
+                    moduloLogin.buscarPorEmail(req.body.email)
+                     .then(usuario =>{
+                   console.log('objeto literal con datos')
+                   console.log(req.body.password);
+                   console.log(usuario.user_pass);
+                   console.log(bcrypt.compareSync(req.body.password, usuario.user_pass));
+                   
+                   if (bcrypt.compareSync(req.body.password, usuario.user_pass)){
+                       var nombre = usuario.user_name
+                       var idUsusario = usuario.user_id
+                       console.log('logueado con exito' + nombre);
+                       var detalles = req.params.id
+                    //    var date = moment().format("MMM Do YY")
+                       //No se si funciona esto del date, faltaria mandarlo a la base de datos, pero por las dudas no mande
+                       
+                       db.resenias.create({
+                           resenia_text: req.body.resenia,
+                           movie_score: req.body.quantity,
+                           movie_id: detalles,
+                           user_id: idUsusario,
+               
+                       })
+                   }
+                   else{
+                       console.log('datos invalidos')
+                   }
+               })
+                }
         })
-        // var today = new Date();
-        // var dd = String(today.getDate()).padStart(2, '0');
-        // var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-        // var yyyy = today.getFullYear();
-        // today = mm + '/' + dd + '/' + yyyy;
-        // // document.write(today);
-        // console.log(today);
-        
-        
-        
-        
         
         res.redirect('/home')
     }

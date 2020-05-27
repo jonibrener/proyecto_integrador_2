@@ -3,7 +3,8 @@ var router = express.Router();
 var peliculasController = require('../controllers/peliculasController')
 
 router.get('/', peliculasController.home)
-router.get('/detalle', peliculasController.detalle)
+router.get('/detalle', peliculasController.detalle, peliculasController.creacionResenias)
+router.post('/detalle', peliculasController.envioResenias)
 router.get('/buscar', peliculasController.buscador)
 router.get ('/genero', peliculasController.genero)
 router.get('/estrenos', peliculasController.estrenos)
@@ -15,8 +16,7 @@ router.get('/registro', peliculasController.registro)
 router.post('/registro', peliculasController.creacion)
 router.get('/login', peliculasController.login)
 router.post('/login', peliculasController.comparacion)
-router.get('/resenia', peliculasController.creacionResenias)
-router.post('/resenia', peliculasController.envioResenias)
+// router.get('/resenia', peliculasController.creacionResenias)
 
 
 
