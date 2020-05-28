@@ -9,7 +9,7 @@ let peliculasController = {
         res.render('home', {prueba:prueba, pagina: "home"})
     },
     detalle: function(req,res){
-        var id = req.params.id
+        var id = req.query.id
         res.render('detalle', {id:id, pagina:"detalle"})
     },
     buscador: function (req,res){
@@ -112,8 +112,9 @@ let peliculasController = {
        
     },
     creacionResenias: function(req, res){
+       var id = req.query.id
         var prueba12 = "hola"
-        res.render('detalle', {prueba12:prueba12, pagina:"detalle"})
+        res.render('detalle', {prueba12:prueba12, pagina:"detalle", idpelicula:id})
     },
     envioResenias: function(req,res){
         moduloLogin.chequearUsuario(req.body.email)
@@ -144,7 +145,7 @@ let peliculasController = {
                            movie_score: req.body.quantity,
                            movie_id: detalles,
                            user_id: idUsusario,
-               
+                           resenia_date: db.sequelize.literal("CURRENT_DATE")
                        })
                    }
                    else{
@@ -156,6 +157,7 @@ let peliculasController = {
         
         res.redirect('/home')
     }
+
     
 }
 

@@ -127,11 +127,13 @@ fetch(recomendacionPelicula)
 // document.querySelector(".contenedorInsertarResenia").innerHTML += li
 })
 
+document.querySelector("div.contenedorResenias").style.display= "none"
 document.querySelector("div.contenedor").style.display= "none"
 document.querySelector("div.contenedorInsertarResenia").style.display= "none"
 document.querySelector("div.subtitulo2Resenia").style.display= "none"
 document.querySelector("div.contenedorResenias").style.display= "none"
 document.querySelector(".cancelarEnvio").style.display = "none"
+
 
 function recomendaciones(){
 
@@ -143,6 +145,7 @@ function recomendaciones(){
   document.querySelector(".subtituloInsertarResenia").style.display = "none"
   document.querySelector("div.contenedorInsertarResenia").style.display= "none"
   document.querySelector(".cancelarEnvio").style.display = "none"
+  document.querySelector("div.contenedorResenias").style.display= "none"
 }
 
 function recomendaciones2(){
@@ -153,9 +156,12 @@ function recomendaciones2(){
   document.querySelector(".subtituloResenia").style.display = "block"
   document.querySelector("div.contenedorInsertarResenia").style.display= "none"
   document.querySelector(".cancelarEnvio").style.display = "none"
+  document.querySelector("div.contenedorResenias").style.display= "none"
+  document.querySelector("div.contenedorResenias").style.display= "none"
 }
 
 function resenias(){
+  document.querySelector("div.contenedorResenias").style.display= "block"
   document.querySelector(".subtitulo2Resenia").style.display = "block"
   document.querySelector("div.contenedor").style.display= "none"
   document.querySelector(".subtitulo").style.display="none"
@@ -168,6 +174,7 @@ function resenias(){
 }
 
 function resenias2(){
+  document.querySelector("div.contenedorResenias").style.display= "none"
   document.querySelector("div.contenedor").style.display= "none"
   document.querySelector(".subtitulo2").style.display = "none"
   document.querySelector(".subtitulo").style.display = "block"
@@ -178,6 +185,7 @@ function resenias2(){
   document.querySelector(".cancelarEnvio").style.display = "none"
 }
 function insertarResenia(){
+  document.querySelector("div.contenedorResenias").style.display= "none"
   document.querySelector(".subtituloInsertarResenia").style.display = "none"
   document.querySelector(".subtituloResenia").style.display = "none"
   document.querySelector(".cancelarEnvio").style.display = "block"
@@ -192,6 +200,7 @@ function insertarResenia(){
 }
 
 function cancelarForm(){
+  document.querySelector("div.contenedorResenias").style.display= "none"
   document.querySelector(".contenedorInsertarResenia").style.display = "none"
   document.querySelector(".cancelarEnvio").style.display = "none"
   document.querySelector(".subtituloInsertarResenia").style.display = "block"
