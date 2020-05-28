@@ -174,14 +174,14 @@ let peliculasController = {
     },
     usuarios: function(req,res){
         var prueba15 = 'hola'
-        let resultados = []
-        res.render('usuarios', {prueba15:prueba15, pagina: "usuarios"})
+        let resultados = null
+        res.render('usuarios', {prueba15:prueba15, pagina: "usuarios", resultados:resultados})
     },
 
     buscadorDeUsuarios: function(req,res){
         db.users.findAll({
             where: {
-               user_email: {[OP.like]: '%' + req.body.usuario + '%'}
+               user_email: {[OP.like]: "%" + req.body.usuario + "%"}
             },
         }).then(resultados => {
             console.log(resultados);
@@ -190,17 +190,23 @@ let peliculasController = {
                 
                 console.log(resultados);
                 
-                res.render('usuarios', {resultados: 'No se encontraron usuarios para ese mail', resultados:resultados, pagina: 'home'});
+                res.render('usuarios', {resultados: 'No se encontraron usuarios para ese mail', resultados:resultados, pagina: 'estrenos'});
                 
             }else{
                 console.log(2);
                 
                 console.log(resultados);
-                res.render('usuarios', {resultados:resultados, pagina: 'home'})
+                
+                res.render('usuarios', {resultados:resultados, pagina: 'estrenos'})
             }
         })
+    },
+    misResenias: function(req,res){
+        var prueba16 = "hola"
+      
+        res.render('misResenias', {prueba16:prueba16, pagina:"estrenos"})
+
     }
-    
     
 }
 

@@ -8,5 +8,16 @@
 
 </form>
 
+<% if (resultados){ %>
+    <% if (resultados.length > 0){ %>
+
+        <% for (let index = 0; index < resultados.length; index++) { %>
+  
+            <p><%=resultados[index].user_email%></p>
+        <%}%>
+    <%}else {%> 
+        <p>No hay resultados</p>
+        <%}%>
+<%}%>
 
 <%- include('footer')%>
