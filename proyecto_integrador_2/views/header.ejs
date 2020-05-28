@@ -63,6 +63,10 @@
     <% }else if (pagina == "login"){ %>
       <link rel="stylesheet" href="/stylesheets/style.css" />
       <link rel="stylesheet" href="/stylesheets/login.css" />
+      
+    <% }else if (pagina == "usuarios"){ %>
+       <link rel="stylesheet" href="/stylesheets/style.css" />
+      <link rel="stylesheet" href="/stylesheets/usuarios.css" />
 
      <% } %>
     
@@ -90,9 +94,15 @@
 
               </div>
             </li>
+            <li class="topnav">
+              
+              
+
+            </li>
             <li class="li-menu"><a class="boton_deHome" href="/home">HOME</a></li>
             <li class="li-menu" id="registrate"> <a class="boton_deRegistro" href="/home/registro">REGISTRATE</a></li>
             <li class="li-menu" id="login1"> <a class="boton_deLogIn" href="/home/login">LOGIN</a></li>
+            <li class="li-menu" id="login1"> <a class="boton_deLogIn" href="/home/usuarios">USUARIOS</a></li>
 
             <!-- <li class="li-menu"><a class="boton_deHome2" href="/home">HOME</a></li> -->
             <li class="nombre"></li>
@@ -130,10 +140,11 @@
             </li> -->
             <li class="topnav">
               <form action="/home/buscar/" method="GET" class="busqueda">
-                <input type="text" placeholder="Search.." name="buscador" class="texto-busqueda">
+                <input type="text" placeholder="Search Movies.." name="buscador" class="texto-busqueda">
                 <button type="submit" class="button_buscador"><i class="fa fa-search"></i></button>
               </form>
             </li>
+            
 
         </ul>
 

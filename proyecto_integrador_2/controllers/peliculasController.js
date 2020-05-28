@@ -2,6 +2,7 @@ let db = require('../database/models')
 let bcrypt = require('bcryptjs');
 var moment = require('moment')
 let moduloLogin = require('../modulo-login')
+let OP = db.Sequelize.Op
 
 let peliculasController = {
     home: function(req,res){
@@ -163,6 +164,24 @@ let peliculasController = {
         })
         
         res.redirect('/home')
+    },
+    usuarios: function(req,res){
+        var prueba15 = 'hola'
+        res.render('usuarios', {prueba15:prueba15, pagina: "usuarios"})
+    },
+
+    buscadorDeUsuarios: function(req,res){
+        db.users.findAll({
+            where: {
+               user_email: {[OP.like]: '%' + req.query.usuario + '%'}
+            },
+        }).then(resultados => {
+            console.log(resultados);
+            if (resultados.length == 0) {
+                res.render('usuarios', {resultados: 'No se encontraron usuarios para ese mail'});
+                
+            }
+        })
     }
     
     
