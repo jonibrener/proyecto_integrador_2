@@ -11,6 +11,13 @@ let peliculasController = {
     detalle: function(req,res){
         var id = req.query.id
         res.render('detalle', {id:id, pagina:"detalle"})
+            db.resenias.findAll({
+                where: [
+                    { movie_id: req.query.id }
+                ]
+            }).then(resultados => {
+                console.log(resultados.resenia_text);
+            })
     },
     buscador: function (req,res){
         var prueba3 = req.params.busqueda
@@ -111,11 +118,11 @@ let peliculasController = {
 
        
     },
-    creacionResenias: function(req, res){
-       var id = req.query.id
-        var prueba12 = "hola"
-        res.render('detalle', {prueba12:prueba12, pagina:"detalle", idpelicula:id})
-    },
+    // creacionResenias: function(req, res){
+    //    var id = req.query.id
+    //     var prueba12 = "hola"
+    //     res.render('detalle', {prueba12:prueba12, pagina:"detalle", idpelicula:id})
+    // },
     envioResenias: function(req,res){
         moduloLogin.chequearUsuario(req.body.email)
         .then(resultado => {
@@ -157,8 +164,8 @@ let peliculasController = {
         
         res.redirect('/home')
     }
-
+    
     
 }
 
-module.exports = peliculasController
+module.exports = peliculasController;

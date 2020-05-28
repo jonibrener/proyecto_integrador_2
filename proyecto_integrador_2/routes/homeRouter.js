@@ -16,6 +16,7 @@ router.get('/registro', peliculasController.registro)
 router.post('/registro', peliculasController.creacion)
 router.get('/login', peliculasController.login)
 router.post('/login', peliculasController.comparacion)
+// router.get('/detalle', peliculasController.mostrarResenia)
 // router.get('/resenia', peliculasController.creacionResenias)
 
 
