@@ -35,5 +35,11 @@ module.exports = function (sequelize, DataTypes){
     
     
     const resenias = sequelize.define('resenias', cols, config)
+    resenias.associate = function (modelos){
+        resenias.belongsTo(modelos.users, {
+            as: "reseniaUsuario", 
+            foreignKey: "user_id"
+        });
+    }
     return resenias
     }

@@ -40,7 +40,22 @@
     <div class="contenedorResenias">
 
       <h1>RESEÑAS</h1>
-    
+      <ul>
+      <% for (let index = 0; index < resultados.length; index++) { %>
+        <li> 
+        <h3>Texto:</h3><%=resultados[index].resenia_text%> 
+        </li>
+        <li>
+         <h3>Puntaje</h3> <%=resultados[index].movie_score%> 
+        </li>
+        <li>
+         <h3>Fecha:</h3> <%=resultados[index].resenia_date%>
+        </li>
+        <li>
+          <h3>usuairio:</h3> <%=resultados[index].reseniaUsuario.user_name%>
+         </li>
+        <% } %>
+      </ul>
     </div>
 
     

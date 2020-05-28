@@ -11,13 +11,19 @@ let peliculasController = {
     },
     detalle: function(req,res){
         var id = req.query.id
-        res.render('detalle', {id:id, pagina:"detalle"})
+       
             db.resenias.findAll({
                 where: [
+                   
                     { movie_id: req.query.id }
+                ], 
+                include: [
+
+                    {association: "reseniaUsuario"}
                 ]
             }).then(resultados => {
-                console.log(resultados.resenia_text);
+                console.log(resultados)
+                res.render('detalle', {id:id, pagina:"detalle", resultados:resultados})
             })
     },
     buscador: function (req,res){
@@ -76,7 +82,8 @@ let peliculasController = {
     },
     login: function(req,res){
         var prueba11 = "hola"
-        res.render('login', {prueba11:prueba11, pagina:"login"})
+        var usuario = user_name
+        res.render('login', {prueba11:prueba11, pagina:"login", usuario:usuario})
     },
     comparacion: function(req,res){
        moduloLogin.chequearUsuario(req.body.email)
@@ -167,19 +174,29 @@ let peliculasController = {
     },
     usuarios: function(req,res){
         var prueba15 = 'hola'
+        let resultados = []
         res.render('usuarios', {prueba15:prueba15, pagina: "usuarios"})
     },
 
     buscadorDeUsuarios: function(req,res){
         db.users.findAll({
             where: {
-               user_email: {[OP.like]: '%' + req.query.usuario + '%'}
+               user_email: {[OP.like]: '%' + req.body.usuario + '%'}
             },
         }).then(resultados => {
             console.log(resultados);
             if (resultados.length == 0) {
-                res.render('usuarios', {resultados: 'No se encontraron usuarios para ese mail'});
+                console.log(1);
                 
+                console.log(resultados);
+                
+                res.render('usuarios', {resultados: 'No se encontraron usuarios para ese mail', resultados:resultados, pagina: 'home'});
+                
+            }else{
+                console.log(2);
+                
+                console.log(resultados);
+                res.render('usuarios', {resultados:resultados, pagina: 'home'})
             }
         })
     }
