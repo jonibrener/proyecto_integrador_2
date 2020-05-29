@@ -11,6 +11,11 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   
+   
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/css/uikit.min.css" />
 
@@ -101,7 +106,56 @@
             </li>
             <li class="li-menu"><a class="boton_deHome" href="/home">HOME</a></li>
             <li class="li-menu" id="registrate"> <a class="boton_deRegistro" href="/home/registro">REGISTRATE</a></li>
-            <li class="li-menu" id="login1"> <a class="boton_deLogIn" href="/home/login">LOGIN</a></li>
+            <li class="li-menu" id="login1">
+              <!-- <a class="boton_deLogIn" href="/home/login">LOGIN</a> -->
+
+              <!-- This is a button toggling the modal -->
+              <button class="uk-button uk-button-default uk-margin-small-right boton_deLogIn botonHeaderLogin" type="button" uk-toggle="target: #modal-example">LOGIN</button>
+            </li>
+              <!-- This is an anchor toggling the modal -->
+              <a href="#modal-example" uk-toggle>Open</a>
+
+              <!-- This is the modal -->
+              <div id="modal-example" uk-modal>
+                  <div class="uk-modal-dialog uk-modal-body">
+                      <h2 class="uk-modal-title">LOGIN</h2>
+
+                      <form class="formDeLogin" action="/home" method="post">
+                        <div class="imgcontainer">
+                          <img src="/img/img_avatar2.png" alt="Avatar" class="avatar">
+                        </div>
+        
+                        <div class="container">
+                          <label for="uname"><b>Username</b></label>
+                          <input type="text" placeholder="Enter Username" name="uname" required class="inputTextLogin">
+        
+                          <label for="psw"><b>Password</b></label>
+                          <input type="password" placeholder="Enter Password" name="psw" required class="inputPassLogin">
+                              <br>
+                          <button type="submit" class="submitLogin">Login</button>
+                          <label>
+                            <input type="checkbox" checked="checked" name="remember"> Remember me
+                          </label>
+                        </div>
+        
+                        <div class="container forgotLogin" style="background-color:#f1f1f1">
+                          <button class="uk-button uk-button-default uk-modal-close cancelbtn cancelLogIn" type="button">Cancel</button>
+                          <span class="psw">Forgot <a href="#" class="forgotLoginPass">password?</a></span>
+                        </div>
+                      </form>
+
+                      <p class="uk-text-right">
+                          
+                      </p>
+                  </div>
+              </div>
+
+              
+
+
+
+
+
             <li class="li-menu" id="login1"> <a class="boton_deLogIn" href="/home/usuarios">USUARIOS</a></li>
     
 
