@@ -82,8 +82,8 @@ let peliculasController = {
     },
     login: function(req,res){
         var prueba11 = "hola"
-        var usuario = user_name
-        res.render('login', {prueba11:prueba11, pagina:"login", usuario:usuario})
+        var resultado = []
+        res.render('login', {prueba11:prueba11, pagina:"login", resultado:resultado})
     },
     comparacion: function(req,res){
        moduloLogin.chequearUsuario(req.body.email)
@@ -110,7 +110,22 @@ let peliculasController = {
            if (bcrypt.compareSync(req.body.password, usuario.user_pass)){
                var nombre = usuario.user_name
                var idUsusario = usuario.user_id
-               res.send('logueado con exito ' + nombre + 'con id: ' + idUsusario)
+
+               db.resenias.findAll({
+                where: [
+                   
+                    { user_id: idUsusario}
+                ], 
+                include: [
+
+                    {association: "reseniaUsuario"}
+                ]
+                })
+                    .then(resultado =>{
+                        res.render('login', {resultado:resultado, pagina: "login"})
+
+                    })
+                    //then que recibe las resenias de ese usuario y las mando a la vista, con un for las recorro y las muestro
             // res.render('header', {usuario.user_name: usuario.user_name})
             // res.render('header', {nombre:null})
 
@@ -181,13 +196,16 @@ let peliculasController = {
     buscadorDeUsuarios: function(req,res){
         db.users.findAll({
             where: {
-               user_email: {[OP.like]: "%" + req.body.usuario + "%"}
+                [OP.or]: [
+               {user_email: {[OP.like]: "%" + req.body.usuario + "%"}}, 
+              { user_name: {[OP.like]: "%" + req.body.usuario + "%"}}
+            ]
             },
         }).then(resultados => {
             console.log(resultados);
             if (resultados.length == 0) {
                 console.log(1);
-                
+
                 console.log(resultados);
                 
                 res.render('usuarios', {resultados: 'No se encontraron usuarios para ese mail', resultados:resultados, pagina: 'estrenos'});
@@ -203,7 +221,6 @@ let peliculasController = {
     },
     misResenias: function(req,res){
         var prueba16 = "hola"
-      
         res.render('misResenias', {prueba16:prueba16, pagina:"estrenos"})
 
     }
