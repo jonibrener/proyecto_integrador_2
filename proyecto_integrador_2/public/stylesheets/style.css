@@ -1790,6 +1790,82 @@ span.psw {
     position: relative;
     top: -8px;
     border-style: none;
+    font-size: 16px;
+}
+
+.botonDeUsarios{
+  position: relative;
+    top: -21px;
+    right: 30px;
+    border: none;
+    background-color: RGB(104,242,205);
+    FONT-SIZE: 16px;
+}
+
+.botonCancelarUsuarios{
+  background-color: red;
+  width: 20%;
+}
+
+.modalUsuarios{
+  background-color: white;
+}
+
+.botonDeUsuarios:hover{
+  background-color: transparent;
+  color: #333;
+  border-color: #b2b2b2;
+}
+
+/* Style the input container */
+.input-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Style the form icons */
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+/* Style the input fields */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+
+.botonDeRegistro{
+  background-color: RGB(104,242,205);
+    position: relative;
+    top: -21px;
+    font-size: 15px;
+    right: 10px;  
 }
 
 /* Change styles for span and cancel button on extra small screens */

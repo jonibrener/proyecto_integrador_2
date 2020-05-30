@@ -105,7 +105,55 @@
 
             </li>
             <li class="li-menu"><a class="boton_deHome" href="/home">HOME</a></li>
-            <li class="li-menu" id="registrate"> <a class="boton_deRegistro" href="/home/registro">REGISTRATE</a></li>
+            
+            <!-- modal de registrate -->
+            <li class="li-menu" id="registrate"> 
+              <!-- <a class="boton_deRegistro" href="/home/registro">REGISTRATE</a> -->
+              <!-- This is a button toggling the modal -->
+              <button uk-toggle="target: #my-id" type="button" class="botonDeRegistro">REGISTRATE</button></li>
+
+              <!-- This is the modal -->
+              <div id="my-id" uk-modal>
+                  <div class="uk-modal-dialog uk-modal-body">
+                      <h2 class="uk-modal-title">SignUp</h2>
+
+                      <form action="/home/registro" method="POST">
+                        
+                        <div class="input-container">
+                          <i class="fa fa-user icon"></i>
+                          <input class="input-field" type="text" placeholder="Username" name="usrnm">
+                        
+                        </div>
+                      
+                        <div class="input-container">
+                          <i class="fa fa-envelope icon"></i>
+                          <input class="input-field" type="text" placeholder="Email" name="email">
+                        </div>
+                      
+                        <div class="input-container">
+                          <i class="fa fa-key icon"></i>
+                          <input class="input-field" type="password" placeholder="Password" name="psw">
+                        </div>
+
+                        <div class="input-container">
+                          <i class="fa fa-calendar icon"></i>
+                          <input class="input-field" type="date" name="birthday">
+                        </div>
+                        
+                      
+                        <button type="submit" class="btn">Register</button>
+                      </form>
+
+                      <button class="uk-modal-close" type="button">Cancelar</button>
+                  </div>
+              </div>
+
+
+
+
+
+           
+           <!-- modal de login -->
             <li class="li-menu" id="login1">
               <!-- <a class="boton_deLogIn" href="/home/login">LOGIN</a> -->
 
@@ -126,8 +174,8 @@
                         </div>
         
                         <div class="container">
-                          <label for="uname"><b>Username</b></label>
-                          <input type="text" placeholder="Enter Username" name="uname" required class="inputTextLogin">
+                          <label for="uname"><b>User Mail</b></label>
+                          <input type="text" placeholder="Enter E-mail" name="uname" required class="inputTextLogin">
         
                           <label for="psw"><b>Password</b></label>
                           <input type="password" placeholder="Enter Password" name="psw" required class="inputPassLogin">
@@ -156,8 +204,26 @@
 
 
 
-            <li class="li-menu" id="login1"> <a class="boton_deLogIn" href="/home/usuarios">USUARIOS</a></li>
-    
+            <li class="li-menu" id="login1"> 
+              <!-- <a class="boton_deLogIn" href="/home/usuarios">USUARIOS</a> -->
+              <!-- This is a button toggling the modal -->
+              <button uk-toggle="target: #my-id" type="button" class="botonDeUsarios">USUARIOS</button></li>
+
+              <!-- This is the modal -->
+              <div id="my-id" uk-modal>
+                  <div class="uk-modal-dialog uk-modal-body modalUsuarios">
+                      <h2 class="uk-modal-title">Buscador de usuarios</h2>
+                      <form action="/home/usuarios" method="POST" class="formUsuarios"> 
+                        <label for="usuario">BUSCADOR DE USUARIOS</label>
+                        <input type="usuario" id="usuario" name="usuario" placeholder="User name or user email...">
+                        <input type="submit">
+                    
+                    
+                    </form>
+                    
+                      <button class="uk-modal-close botonCancelarUsuarios" type="button">Cancelar</button>
+                  </div>
+              </div>
 
             <!-- <li class="li-menu"><a class="boton_deHome2" href="/home">HOME</a></li> -->
             <li class="nombre"></li>

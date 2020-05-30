@@ -65,12 +65,12 @@ let peliculasController = {
        // var email = req.body.email
 
        // var password = req.body.password 
-       const hash = bcrypt.hashSync(req.body.password, 10);
+       const hash = bcrypt.hashSync(req.body.psw, 10);
 
 
 
         db.users.create({
-            user_name: req.body.name,
+            user_name: req.body.usrnm,
             user_email: req.body.email,
             user_pass: hash,
             user_bornDate: req.body.birthday, 
@@ -86,7 +86,7 @@ let peliculasController = {
         res.render('login', {prueba11:prueba11, pagina:"login", resultado:resultado})
     },
     comparacion: function(req,res){
-       moduloLogin.chequearUsuario(req.body.email)
+       moduloLogin.chequearUsuario(req.body.uname)
        .then(resultado => {
         //    res.send("el email esta en la base de datos")
         //    res.render('login', {resultado:resultado})
@@ -98,16 +98,16 @@ let peliculasController = {
         else{
             console.log("el email esta en la base de datos");
            
-            moduloLogin.buscarPorEmail(req.body.email)
+            moduloLogin.buscarPorEmail(req.body.uname)
              .then(usuario =>{
            console.log('objeto literal con datos')
-           console.log(req.body.password);
+           console.log(req.body.psw);
            console.log(usuario.user_pass);
-           console.log(bcrypt.compareSync(req.body.password, usuario.user_pass));
+           console.log(bcrypt.compareSync(req.body.psw, usuario.user_pass));
            
            
            
-           if (bcrypt.compareSync(req.body.password, usuario.user_pass)){
+           if (bcrypt.compareSync(req.body.psw, usuario.user_pass)){
                var nombre = usuario.user_name
                var idUsusario = usuario.user_id
 
