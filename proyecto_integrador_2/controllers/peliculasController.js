@@ -231,7 +231,13 @@ let peliculasController = {
             where: {resenias_id:2}
         })
         res.redirect('/home')
-    }
+    },
+    // editar: function (req, res) {
+    //     db.resenias.update({
+    //         where: 
+    //     })
+    //     res.redirect('/home')
+    // }
     
 }
 

@@ -12,13 +12,62 @@
               <div class="uk-card uk-card-default uk-card-body">Fecha: <%=resultado[index].resenia_date%></div>
               <div class="uk-card uk-card-default uk-card-body">Usuario: <%=resultado[index].reseniaUsuario.user_name%></div>
 
-              <!-- <form action="/home/Editar" method="POST">
-                <button type="submit">Editar la resenia</button>
-              </form> -->
-             <form action="/home/eliminar" method="POST">
-              <button type="submit">Eliminar la resenia</button>
+              <a class="uk-button uk-button-default" href="#modal-sections" uk-toggle>Editar la resenia</a>
+              <div id="modal-sections" uk-modal>
+                  <div class="uk-modal-dialog">
+                      <button class="uk-modal-close-default" type="button" uk-close></button>
+                      <div class="uk-modal-header">
+                          <h2 class="uk-modal-title">Editar la resenia</h2>
+                      </div>
+                      <div class="uk-modal-body">
+                        <form action="/home/editar" method="POST">
+                          <p>EMAIL:</p>
+                          <input type="email" name="email">
+                          <br>
+                          <P>CONTRASEÑA:</P>
+                          <input type="password" name="password">
+                          <br>
+                          <p>RESEÑA:</p>
+                          <textarea name="resenia" rows="5" cols="50" placeholder="ESCRIBI TU RESEÑA AQUI"></textarea>
+                          <br>
+                          <p>PUNTAJE (entre 1 y 10):</p>
+                          <input type="number" id="quantity" name="quantity" min="1" max="10">
+                          <br>
+                        </form>
+                      </div>
+                      <div class="uk-modal-footer uk-text-right">
+                          <button class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
+                          <button class="uk-button uk-button-primary" type="submit">Subir resenia</button>
+                      </div>
+                  </div>
+              </div>
 
-            </form>
+              <a class="uk-button uk-button-default" href="#modal-sections" uk-toggle>Eliminar la resenia</a>
+
+              <div id="modal-sections" uk-modal>
+                  <div class="uk-modal-dialog">
+                      <button class="uk-modal-close-default" type="button" uk-close></button>
+                      <div class="uk-modal-header">
+                          <h2 class="uk-modal-title">Ingresa tus datos para eliminar</h2>
+                      </div>
+                      <div class="uk-modal-body">
+
+                        <form action="/home/eliminar" method="POST">
+                          <p>EMAIL:</p>
+                          <input type="email" name="email">
+                          <br>
+                          <P>CONTRASEÑA:</P>
+                          <input type="password" name="password">
+                          <br>
+                        </form>
+
+                      </div>
+                      <div class="uk-modal-footer uk-text-right">
+                          <button class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
+                          <button class="uk-button uk-button-primary" type="submit">Eliminar</button>
+                      </div>
+                  </div>
+              </div>
 
 
           </div>

@@ -23,6 +23,8 @@ router.get('/misResenias', peliculasController.misResenias)
 // router.get('/detalle', peliculasController.mostrarResenia)
 // router.get('/resenia', peliculasController.creacionResenias)
 router.post('/eliminar', peliculasController.eliminar)
+// router.post('/editar', peliculasController.editar)
+
 
 
 
