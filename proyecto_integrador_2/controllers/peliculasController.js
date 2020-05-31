@@ -227,11 +227,20 @@ let peliculasController = {
     },
 
     eliminar: function (req, res) {
-        db.resenias.destroy({
-            where: {resenias_id:2}
-        })
+        db.resenias.findAll()
+        .then(resultados=>{
+          for (let index = 0; index < resultados.length; index++) {
+              if (resultados.resenias_id =   resultados[index].resenias_id) {
+                db.resenias.destroy({
+                    where: {resenias_id:resultados[index].resenias_id}
+            })
+              }
+            
+          }
+            
         res.redirect('/home')
-    },
+        })
+    }
     // editar: function (req, res) {
     //     db.resenias.update({
     //         where: 
