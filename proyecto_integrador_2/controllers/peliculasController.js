@@ -223,6 +223,14 @@ let peliculasController = {
         var prueba16 = "hola"
         res.render('misResenias', {prueba16:prueba16, pagina:"estrenos"})
 
+    
+    },
+
+    eliminar: function (req, res) {
+        db.resenias.destroy({
+            where: {resenias_id:2}
+        })
+        res.redirect('/home')
     }
     
 }
