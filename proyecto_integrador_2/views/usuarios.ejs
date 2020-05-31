@@ -21,7 +21,11 @@
             </div>
         <%}%>
     <%}else {%> 
-        <p>No hay resultados</p>
+        <div class="uk-alert-warning" uk-alert>
+            <a class="uk-alert-close" uk-close></a>
+            <p>No se encontraron resultados para tu busqueda, intenta nuevamente</p>
+            <a href="/home">Haz click para volver a la Home</a>
+        </div>
         <%}%>
 <%}%>
 
