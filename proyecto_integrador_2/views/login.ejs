@@ -13,7 +13,7 @@
               <div class="uk-card uk-card-default uk-card-body">Fecha: <%=resultado[index].resenia_date%></div>
               <div class="uk-card uk-card-default uk-card-body">Usuario: <%=resultado[index].reseniaUsuario.user_name%></div>
 
-              <a class="uk-button uk-button-default editarResenia" href="#modal-sections" uk-toggle="target: #modal-editar-resenia">Editar la resenia</a>
+              <a class="uk-button uk-button-default editarResenia" href="/home/resenias/editar/<%=resultado[index].resenias_id%>">Editar la resenia</a>
               <div id="modal-editar-resenia" uk-modal>
                 <div class="uk-modal-dialog uk-modal-body">
                     <h2 class="uk-modal-title">Editar reseña</h2>
