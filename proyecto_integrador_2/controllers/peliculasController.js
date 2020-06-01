@@ -304,5 +304,10 @@ confirmarEditar: function(req,res){
 
 
 }
+// reseniasMasRecientes: function(req,res){
+//     db.resenias.findAll({
+        
+//     })
+// }
 }
 module.exports = peliculasController;
