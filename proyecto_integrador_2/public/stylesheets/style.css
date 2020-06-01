@@ -1599,17 +1599,17 @@ button.subtituloResenia{
           font-weight: normal;
         }
         label.email{
-          color: white;
+          color: black;
           margin-left: 4%;
         }
         label.password{
-          color: white;
+          color: black;
         }
         label.quantity{
-          color: white;
+          color: black;
         }
         label.resenia{
-          color: white;
+          color: black;
           margin-left: 3%;
 
         }
@@ -1876,8 +1876,19 @@ span.psw {
   color: white;
 }
 
+.carruResenias{
+  color: black;
+  position: relative;
+    left: -400px;
+}
 
+.agregarResenia{
+  color: black;
+}
 
+.nombreFormEliminar{
+color: black;
+}
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
   span.psw {

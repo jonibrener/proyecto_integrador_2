@@ -46,34 +46,42 @@
               <a class="uk-button uk-button-default eliminarResenia" href="#modal-sections" uk-toggle="target: #modal-eliminar-resenia">Eliminar la resenia</a>
 
               <div id="modal-eliminar-resenia" uk-modal>
-                  <div class="uk-modal-dialog">
-                      <button class="uk-modal-close-default" type="button" uk-close></button>
-                      <div class="uk-modal-header">
-                          <h2 class="uk-modal-title">Ingresa tus datos para eliminar</h2>
+                <div class="uk-modal-dialog uk-modal-body">
+                    <h2 class="uk-modal-title">Ingresa tus datos para eliminar</h2>
+      
+                    <form class="formDeLogin" action="/home/eliminar" method="POST">
+                      <div class="imgcontainer">
+                        <img src="/img/img_avatar2.png" alt="Avatar" class="avatar">
                       </div>
-                      <div class="uk-modal-body">
-
-                        <form action="/home/eliminar" method="POST">
-                          <p>EMAIL:</p>
-                          <input type="email" name="email">
-                          <br>
-                          <P>CONTRASEÑA:</P>
-                          <input type="password" name="password">
-                          <br>
+      
+                      <div class="container">
+                        <i class="fa fa-envelope icon"></i>
+                        <label for="email" class="nombreFormEliminar"><b>User Mail</b></label>
+                        <input type="email" placeholder="Enter E-mail" name="email" required class="inputTextLogin">
+                      </div>
+      
+                      <div class="container">
+                        <i class="fa fa-key icon"></i>
+                        <label for="password" class="nombreFormEliminar"><b>Password</b></label>
+      
+                        <input type="password" placeholder="Enter Password" name="password" required class="inputPassLogin">
+                      </div>
+      
+                        
+                        <br>
                           <button class="uk-button uk-button-primary" type="submit">Eliminar</button>
-                        </form>
-
-                      </div>
-                      <div class="uk-modal-footer uk-text-right">
-                          <button class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
-                          
-                      </div>
+                          <button class="uk-button uk-button-default uk-modal-close cancelbtn cancelLogIn" type="button">Cancel</button>
                   </div>
               </div>
 
 
           </div>
         </div>
+
+
+
+        
+               
 <%}%>
 
 

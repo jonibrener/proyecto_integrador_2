@@ -122,6 +122,10 @@ let peliculasController = {
                 ]
                 })
                     .then(resultado =>{
+                       
+
+                        
+
                         res.render('login', {resultado:resultado, pagina: "login"})
 
                     })
@@ -230,7 +234,7 @@ let peliculasController = {
         db.resenias.findAll()
         .then(resultados=>{
           for (let index = 0; index < resultados.length; index++) {
-              if (resultados.resenias_id =   resultados[index].resenias_id) {
+              if (resultados.resenias_id ==   resultados[index].resenias_id) {
                 db.resenias.destroy({
                     where: {resenias_id:resultados[index].resenias_id}
             })

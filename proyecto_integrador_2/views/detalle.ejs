@@ -35,7 +35,7 @@
   
     
     <button onclick="resenias()" uk-toggle="target: #modal-ver-resenias" type="button" name="button" class="subtituloResenia">Ver Reseñas...</button>
-    <button onclick="resenias2()" class="subtitulo2Resenia"  type="button" name="button"> Ver Menos Reseñas...</button>
+    
   
 
     <div class="contenedorResenias">
@@ -45,57 +45,119 @@
         <!-- This is the modal -->
         <div id="modal-ver-resenias" uk-modal>
             <div class="uk-modal-dialog uk-modal-body">
+              
+              <!-- COMIENZO DE CARRUSEL -->
+              <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="clsActivated: uk-transition-active; center: true">
+
+              </div>
                 <h2 class="uk-modal-title">Las Reseñas para esta pelicula son...</h2>
                 <ul>
                   <% for (let index = 0; index < resultados.length; index++) { %>
-                    <li> 
-                    <h3>Texto:</h3><%=resultados[index].resenia_text%> 
-                    </li>
-                    <li>
-                     <h3>Puntaje</h3> <%=resultados[index].movie_score%> 
-                    </li>
-                    <li>
-                     <h3>Fecha:</h3> <%=resultados[index].resenia_date%>
-                    </li>
-                    <li>
-                      <h3>usuairio:</h3> <%=resultados[index].reseniaUsuario.user_name%>
-                     </li>
+                    
+                    <ul class="uk-slider-items uk-grid">
+                      <li class="uk-width-3-4">
+                          <div class="uk-panel">
+                              
+                              <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+                                  <h3 class="uk-margin-remove">Resultados</h3>
+                                  <li class="carruResenias"> 
+                                    <h3>Texto:</h3><%=resultados[index].resenia_text%> 
+                                    </li>
+                                    <li class="carruResenias">
+                                     <h3>Puntaje</h3> <%=resultados[index].movie_score%> 
+                                    </li>
+                                    <li class="carruResenias">
+                                     <h3>Fecha:</h3> <%=resultados[index].resenia_date%>
+                                    </li>
+                                    <li class="carruResenias">
+                                      <h3>usuairio:</h3> <%=resultados[index].reseniaUsuario.user_name%>
+                                     </li>
+                                  <div class="uk-position-center uk-panel"></div>
+                              </li>
+                      
+                   </ul>
+                  </ul>
                     <% } %>
                   </ul>
 
-                <button class="uk-modal-close" type="button">Cerrar</button>
+                
+                <button onclick="resenias2()" class="uk-modal-close subtitulo2Resenia"  type="button" name="button">Cancelar</button>
+
+                <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+    
+    </div>
             </div>
         </div>
+        
+    </div>
+    
+     
+
 
     
       
-    </div>
+
 
     
-    <button onclick="insertarResenia()" class="subtituloInsertarResenia" type="button" name="button"> Insertar una Reseña...</button>
-    <button onclick="cancelarForm()" class="cancelarEnvio" type="button" name="button"> Cancelar</button>
+    <button onclick="insertarResenia()" class="subtituloInsertarResenia" uk-toggle="target: #modal-insertar-resenia" type="button" name="button"> Insertar una Reseña...</button>
+    
    
     <div class="contenedorInsertarResenia">
 
-    <section class="contenedorFormulario">
-       <h1 class="resenia">ESCRIBI TU RESEÑA:</h1>
-       <form action="/home/detalle/<%=id%>" method="post">
-       <label for="email" class="email">EMAIL:</label>
-       <input type="email" name="email">
-       <br>
-       <label for="password" class="password">CONTRASEÑA:</label>
-       <input type="password" name="password">
-       <br>
-       <label for="resenia" class="resenia">RESEÑA:</label>
-       <textarea name="resenia" rows="5" cols="50" placeholder="ESCRIBI TU RESEÑA AQUI"></textarea>
-       <br>
-      <label for="quantity" class="quantity">PUNTAJE (entre 1 y 10):</label>
-      <input type="number" id="quantity" name="quantity" min="1" max="10">
-     <br>
-       <button type="submit" class="subir">SUBIR RESEÑA</button>
+      <!-- This is a button toggling the modal -->
 
-       </form>
-      </section>
+
+<!-- This is the modal -->
+<div id="modal-insertar-resenia" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <h2 class="uk-modal-title">Agregar una reseña</h2>
+        <section class="contenedorFormulario">
+       
+      
+
+
+          <form action="/home/detalle/<%=id%>" method="POST">
+            <div class="imgcontainer">
+              <img src="/img/img_avatar2.png" alt="Avatar" class="avatar">
+            </div>
+            
+          
+            <div class="input-container">
+              <i class="fa fa-envelope icon"></i>
+              <input class="input-field" type="text" placeholder="Email" name="email">
+            </div>
+          
+            <div class="input-container">
+              <i class="fa fa-key icon"></i>
+              <input class="input-field" type="password" placeholder="Password" name="password">
+            </div>
+
+            <div class="input-container">
+              <i class="fa fa-commenting icon"></i>
+              <textarea name="resenia" rows="5" cols="50" placeholder="Escribí tu reseña"></textarea>
+            </div>
+
+            <div class="input-container">
+              <i class="fa fa-sliders icon"></i>
+              <label for="range">Puntaje</label>
+              <input class="uk-range" type="range" value="2" min="0" max="10" step="0.1" name="quantity">
+          </div>
+            
+          
+            <button type="submit" class="btn">Subir reseña</button>
+          </form>
+
+          
+          <button onclick="cancelarForm()" class="uk-modal-close cancelarEnvio" type="button" name="button"> Cancelar</button>
+
+         </section>
+        
+    </div>
+</div>
+
+
+    
     </div>
 
 
