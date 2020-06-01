@@ -243,8 +243,57 @@ let peliculasController = {
     })
 }
     })
+},
+
+editar: function(req,res){
+    resultado= []
+    res.render('editar', {editarId:req.params.id, pagina:"home", resultado:resultado})
+},
+
+confirmarEditar: function(req,res){
+    moduloLogin.chequearUsuario(req.body.email)
+.then(resultado => {
+    if (resultado == false){
+        res.send("el email no esta en la base de datos");
+         }
+        else{
+            moduloLogin.buscarPorEmail(req.body.email)
+             .then(usuario =>{
+           
+           if (bcrypt.compareSync(req.body.password, usuario.user_pass)){
+               
+            // let updateR ={
+            //     textoResenia: req.body.resenia_text,
+            //     puntajeResenia: req.body.quantity,
+            //     id: req.params.id
+            // }
+
+               db.resenias.update({
+                resenia_text: req.body.resenia,
+                movie_score: req.body.quantity,
+                resenia_updateDate: db.sequelize.literal("CURRENT_DATE")
+               }, { 
+                   where: {
+                    resenias_id: req.params.id,
+                }
+               }).then(()=>{
+                   db.resenias.findByPk(req.params.id)
+                   .then(resultado =>{
+                       res.redirect('/home')
+                   })
+                
+               })
+            
+           }
+           else{
+            res.redirect('/home/resenias/editar/'+req.params.id)
+        }
+        
+})
 }
-}
+})
 
 
+}
+}
 module.exports = peliculasController;
