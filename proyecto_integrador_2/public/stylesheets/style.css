@@ -1093,7 +1093,7 @@ a.boton_deHome2:hover{
 
 
 /* dispositivos mobile */
-@media only screen and (max-width: 600px) {
+@media (min-width: 0px) and (max-width: 480px) {
   .topnav .search-container {
     float: none;
   }
@@ -1153,7 +1153,7 @@ a.boton_deHome2:hover{
   a.boton_deHome {
     position: relative;
     bottom: 38px;
-    left: 565px;
+    left: 360px;
     z-index: 1;
   }
 
