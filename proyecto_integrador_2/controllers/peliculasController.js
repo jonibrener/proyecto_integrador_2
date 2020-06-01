@@ -22,7 +22,7 @@ let peliculasController = {
                     {association: "reseniaUsuario"}
                 ]
             }).then(resultados => {
-                console.log(resultados)
+                // console.log(resultados)
                 res.render('detalle', {id:id, pagina:"detalle", resultados:resultados})
             })
     },
@@ -84,67 +84,52 @@ let peliculasController = {
         var prueba11 = "hola"
         var resultado = []
         res.render('login', {prueba11:prueba11, pagina:"login", resultado:resultado})
+        
     },
     comparacion: function(req,res){
        moduloLogin.chequearUsuario(req.body.uname)
        .then(resultado => {
-        //    res.send("el email esta en la base de datos")
-        //    res.render('login', {resultado:resultado})
-
+     
         if (resultado == false){
-        console.log("el email no esta en la base de datos");
-
+            res.send("el email no esta en la base de datos");
         }
         else{
-            console.log("el email esta en la base de datos");
-           
+   
             moduloLogin.buscarPorEmail(req.body.uname)
              .then(usuario =>{
-           console.log('objeto literal con datos')
-           console.log(req.body.psw);
-           console.log(usuario.user_pass);
-           console.log(bcrypt.compareSync(req.body.psw, usuario.user_pass));
-           
-           
-           
+    
            if (bcrypt.compareSync(req.body.psw, usuario.user_pass)){
                var nombre = usuario.user_name
                var idUsusario = usuario.user_id
-
-               db.resenias.findAll({
-                where: [
-                   
-                    { user_id: idUsusario}
-                ], 
-                include: [
-
-                    {association: "reseniaUsuario"}
-                ]
-                })
-                    .then(resultado =>{
-                       
-
-                        
-
-                        res.render('login', {resultado:resultado, pagina: "login"})
-
-                    })
-                    //then que recibe las resenias de ese usuario y las mando a la vista, con un for las recorro y las muestro
-            // res.render('header', {usuario.user_name: usuario.user_name})
-            // res.render('header', {nombre:null})
-
+    
+            res.redirect('/home/resenias/'+idUsusario)
            }
            else{
-               res.send('datos invalidos')
+               res.redirect('/home')
            }
-
-       
        })
         }
        })
-
-       
     },
+
+    mostrarResenias:function(req,res){
+        db.resenias.findAll({
+            where: [
+               
+                { user_id: req.params.id}
+            ], 
+            include: [
+
+                {association: "reseniaUsuario"}
+            ]
+            })
+                .then(resultado =>{
+                    res.render('login', {resultado:resultado, pagina: "login"})
+
+                })
+    },
+
+    
     // creacionResenias: function(req, res){
     //    var id = req.query.id
     //     var prueba12 = "hola"
@@ -154,21 +139,21 @@ let peliculasController = {
         moduloLogin.chequearUsuario(req.body.email)
         .then(resultado => {
             if (resultado == false){
-                console.log("el email no esta en la base de datos");
+                res.send("el email no esta en la base de datos");
                  }
                 else{
-                    console.log("el email esta en la base de datos");
+                    // console.log("el email esta en la base de datos");
                     moduloLogin.buscarPorEmail(req.body.email)
                      .then(usuario =>{
-                   console.log('objeto literal con datos')
-                   console.log(req.body.password);
-                   console.log(usuario.user_pass);
-                   console.log(bcrypt.compareSync(req.body.password, usuario.user_pass));
+                //    console.log('objeto literal con datos')
+                //    console.log(req.body.password);
+                //    console.log(usuario.user_pass);
+                //    console.log(bcrypt.compareSync(req.body.password, usuario.user_pass));
                    
                    if (bcrypt.compareSync(req.body.password, usuario.user_pass)){
                        var nombre = usuario.user_name
                        var idUsusario = usuario.user_id
-                       console.log('logueado con exito' + nombre);
+                    //    console.log('logueado con exito' + nombre);
                        var detalles = req.params.id
                     //    var date = moment().format("MMM Do YY")
                        
@@ -206,18 +191,18 @@ let peliculasController = {
             ]
             },
         }).then(resultados => {
-            console.log(resultados);
+            // console.log(resultados);
             if (resultados.length == 0) {
-                console.log(1);
+                // console.log(1);
 
-                console.log(resultados);
+                // console.log(resultados);
                 
                 res.render('usuarios', {resultados: 'No se encontraron usuarios para ese mail', resultados:resultados, pagina: 'estrenos'});
                 
             }else{
-                console.log(2);
+                // console.log(2);
                 
-                console.log(resultados);
+                // console.log(resultados);
                 
                 res.render('usuarios', {resultados:resultados, pagina: 'estrenos'})
             }
@@ -231,27 +216,27 @@ let peliculasController = {
     },
 
     eliminar: function (req, res) {
-        db.resenias.findAll()
-        .then(resultados=>{
-          for (let index = 0; index < resultados.length; index++) {
-              if (resultados.resenias_id ==   resultados[index].resenias_id) {
+        resultado= []
+        res.render('login', {deleteId:req.params.id, pagina:"home", resultado:resultado})
+    },
+    confirmarEliminar: function(req,res){
+        moduloLogin.validar(req.body.email, req.body.password)
+        .then(resultado =>{
+            if (resultado != null) {
                 db.resenias.destroy({
-                    where: {resenias_id:resultados[index].resenias_id}
-            })
-              }
-            
-          }
-            
-        res.redirect('/home')
+                    where: {
+                        resenias_id:req.params.id,
+                    }
+                })
+                res.redirect("/home/resenias/")
+            }else{
+                res.redirect('/home/resenias/eliminar/'+req.params.id)
+            }
+
+
         })
     }
-    // editar: function (req, res) {
-    //     db.resenias.update({
-    //         where: 
-    //     })
-    //     res.redirect('/home')
-    // }
-    
+   
 }
 
 module.exports = peliculasController;

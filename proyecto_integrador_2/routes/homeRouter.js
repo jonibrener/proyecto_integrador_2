@@ -22,9 +22,11 @@ router.post('/usuarios', peliculasController.buscadorDeUsuarios)
 router.get('/misResenias', peliculasController.misResenias)
 // router.get('/detalle', peliculasController.mostrarResenia)
 // router.get('/resenia', peliculasController.creacionResenias)
-router.post('/eliminar', peliculasController.eliminar)
-// router.post('/editar', peliculasController.editar)
 
+// router.post('/editar', peliculasController.editar)
+router.post('/resenias/:id', peliculasController.mostrarResenias)
+router.get('/resenias/eliminar/:id', peliculasController.eliminar)
+router.post('/resenias/eliminar/:id', peliculasController.confirmarEliminar)
 
 
 

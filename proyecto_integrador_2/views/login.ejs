@@ -70,13 +70,14 @@
 
 
 
-              <a class="uk-button uk-button-default eliminarResenia" href="#modal-sections" uk-toggle="target: #modal-eliminar-resenia">Eliminar la resenia</a>
+              <a class="uk-button uk-button-default eliminarResenia" href="/home/resenias/eliminar/<%=resultado[index].resenias_id%>">
+                Eliminar la resenia</a>
 
               <div id="modal-eliminar-resenia" uk-modal>
                 <div class="uk-modal-dialog uk-modal-body">
                     <h2 class="uk-modal-title">Ingresa tus datos para eliminar</h2>
       
-                    <form class="formDeLogin" action="/home/eliminar" method="POST">
+                    <form class="formDeLogin" action="/home/resenias/eliminar/<%=resultado[index].resenias_id%>" method="POST">
                       <div class="imgcontainer">
                         <img src="/img/img_avatar2.png" alt="Avatar" class="avatar">
                       </div>
