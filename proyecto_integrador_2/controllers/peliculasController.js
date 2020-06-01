@@ -101,9 +101,21 @@ let peliculasController = {
            if (bcrypt.compareSync(req.body.psw, usuario.user_pass)){
                var nombre = usuario.user_name
                var idUsusario = usuario.user_id
+               db.resenias.findAll({
+                where: [
+                   
+                    { user_id: usuario.user_id}
+                ], 
+                include: [
     
-            res.redirect('/home/resenias/'+idUsusario)
-           }
+                    {association: "reseniaUsuario"}
+                ]
+                })
+                    .then(resultado =>{
+                        res.render('login', {resultado:resultado, pagina: "login"})
+    
+                    })
+        }
            else{
                res.redirect('/home')
            }
@@ -112,22 +124,7 @@ let peliculasController = {
        })
     },
 
-    mostrarResenias:function(req,res){
-        db.resenias.findAll({
-            where: [
-               
-                { user_id: req.params.id}
-            ], 
-            include: [
-
-                {association: "reseniaUsuario"}
-            ]
-            })
-                .then(resultado =>{
-                    res.render('login', {resultado:resultado, pagina: "login"})
-
-                })
-    },
+    
 
     
     // creacionResenias: function(req, res){
@@ -217,26 +214,37 @@ let peliculasController = {
 
     eliminar: function (req, res) {
         resultado= []
-        res.render('login', {deleteId:req.params.id, pagina:"home", resultado:resultado})
+        res.render('eliminar', {deleteId:req.params.id, pagina:"home", resultado:resultado})
     },
     confirmarEliminar: function(req,res){
-        moduloLogin.validar(req.body.email, req.body.password)
-        .then(resultado =>{
-            if (resultado != null) {
-                db.resenias.destroy({
+        moduloLogin.chequearUsuario(req.body.email)
+    .then(resultado => {
+        if (resultado == false){
+            res.send("el email no esta en la base de datos");
+             }
+            else{
+                moduloLogin.buscarPorEmail(req.body.email)
+                 .then(usuario =>{
+               
+               if (bcrypt.compareSync(req.body.password, usuario.user_pass)){
+                   var nombre = usuario.user_name
+                   var idUsusario = usuario.user_id
+                   var detalles = req.params.id
+                 
+                   db.resenias.destroy({
                     where: {
                         resenias_id:req.params.id,
                     }
                 })
-                res.redirect("/home/resenias/")
-            }else{
+                res.redirect("/home")
+               }else{
                 res.redirect('/home/resenias/eliminar/'+req.params.id)
             }
-
-
-        })
-    }
-   
+    })
 }
+    })
+}
+}
+
 
 module.exports = peliculasController;

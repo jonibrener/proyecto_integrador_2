@@ -1889,6 +1889,25 @@ span.psw {
 .nombreFormEliminar{
 color: black;
 }
+
+.imagenLogEliminar{
+  width: 25%;
+    right: -503px;
+    position: relative;
+    left: 238px;
+}
+
+.formLogEliminar{
+  position: relative;
+    right: -212px;
+}
+
+.formCancelarLog{
+  position: relative;
+    right: -92px;
+}
+
+
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
   span.psw {

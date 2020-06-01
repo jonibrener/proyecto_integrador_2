@@ -1,0 +1,36 @@
+<%- include('header')%>
+
+ 
+        <h2 class="uk-modal-title">LOGIN</h2>
+
+        <form class="formDeLogin" action="/home/resenias/eliminar/<%=deleteId%>" method="POST">
+          <div class="imgcontainer imagenLogEliminar">
+            <img src="/img/img_avatar2.png" alt="Avatar" class="avatar imagenLogEliminar">
+          </div>
+
+          <div class="container formLogEliminar">
+            <label for="uname"><b>User Mail</b></label>
+            <input type="text" placeholder="Enter E-mail" name="email" required class="inputTextLogin">
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required class="inputPassLogin">
+                <br>
+            <button type="submit" class="submitLogin formCancelarLog">Login</button>
+            <label class="formCancelarLog">
+              <input type="checkbox" checked="checked" name="remember" class="formCancelarLog"> Remember me
+            </label>
+          </div>
+
+          <div class="container forgotLogin" style="background-color:#f1f1f1">
+            <button class="uk-button uk-button-default uk-modal-close cancelbtn cancelLogIn" type="button">Cancel</button>
+            <span class="psw">Forgot <a href="#" class="forgotLoginPass">password?</a></span>
+          </div>
+        </form>
+
+        <p class="uk-text-right">
+            
+        </p>
+    </div>
+
+
+<%- include('footer') %>
