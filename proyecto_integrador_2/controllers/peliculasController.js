@@ -3,6 +3,8 @@ let bcrypt = require('bcryptjs');
 var moment = require('moment')
 let moduloLogin = require('../modulo-login')
 let OP = db.Sequelize.Op
+let alert = require("alert-node") 
+// let notifications = require('awesome-notifications')
 
 let peliculasController = {
     home: function(req,res){
@@ -91,7 +93,7 @@ let peliculasController = {
        .then(resultado => {
      
         if (resultado == false){
-            res.send("el email no esta en la base de datos");
+           res.redirect("/home")
         }
         else{
    
