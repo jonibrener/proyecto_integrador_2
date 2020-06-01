@@ -27,6 +27,7 @@ router.get('/misResenias', peliculasController.misResenias)
 // router.post('/resenias/:id', peliculasController.mostrarResenias)
 router.get('/resenias/eliminar/:id', peliculasController.eliminar)
 router.post('/resenias/eliminar/:id', peliculasController.confirmarEliminar)
+router.get('/infousuarios/:id', peliculasController.infoUsuarios)
 
 
 

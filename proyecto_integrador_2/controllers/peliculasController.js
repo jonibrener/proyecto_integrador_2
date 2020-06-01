@@ -212,6 +212,13 @@ let peliculasController = {
     
     },
 
+    infoUsuarios: function (req,res) {
+        db.users.findByPk(req.params.id)
+        .then(resultado => {
+            res.render('infoUsuarios', {resultado:resultado, pagina:'home'})
+        })
+    },
+
     eliminar: function (req, res) {
         resultado= []
         res.render('eliminar', {deleteId:req.params.id, pagina:"home", resultado:resultado})
