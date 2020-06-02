@@ -303,11 +303,17 @@ confirmarEditar: function(req,res){
 })
 
 
+},
+reseniasMasRecientes: function(req,res){
+    db.resenias.findAll({
+        order: [
+            ['resenia_date', 'DESC'],
+        ],
+        limit: 10
+    })
+    .then(resultados=>{
+        res.render('masRecientes', {resultados:resultados, pagina:"home"})
+    })
 }
-// reseniasMasRecientes: function(req,res){
-//     db.resenias.findAll({
-        
-//     })
-// }
 }
 module.exports = peliculasController;
