@@ -94,10 +94,20 @@ let peliculasController = {
        .then(usuario => {
      
         if (usuario == null){
-            errores.push("El usuario ingresado es invalido")
-        }
-         if (errores.length > 0){
-             res.render('login', {errores:errores, pagina: 'login'})
+            errores.push("tabacman sos terrible puto")
+        }else if(req.body.uname.length < 3){
+            errores.push("Por favor, ingrese al menos 3 caracteres.")
+        }else if(req.body.psw.length < 5){
+            errores.push("La contraseña es muy debil, al menos ingrese 6 caracteres")
+        }if (errores.length > 0){
+            req.session.erroresregistracion = errores
+            //  res.render('login', {errores:errores, pagina: 'login'})
+            console.log(errores);
+            // console.log(erroresregistracion);
+
+            
+            
+             res.redirect("back")
          }else{
             db.resenias.findAll({
                 where: [
@@ -110,8 +120,10 @@ let peliculasController = {
                 ]
                 })
                     .then(resultado =>{ 
+                        console.log(errores);
                         res.render('login', {resultado:resultado, pagina: "login"})
-    
+                        
+                        // res.redirect("back")
                     })
             }
          })

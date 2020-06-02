@@ -104,17 +104,32 @@
               
 
             </li>
-            <li class="li-menu"><a class="boton_deHome" href="/home/mejoresPuntuadas">MEJOR PUNTUADAS</a></li>
+<!-- 
+            comienzo de dropwdown -->
 
-            <li class="li-menu"><a class="boton_deHome" href="/home/reseniasMasRecientes">MAS RECIENTES</a></li>
+          <div class="uk-inline dropdown-resenias">
+              <button class="uk-button uk-button-default botton-dropdown-resenias" type="button">RESEÑAS</button>
+              <div uk-dropdown="mode: click">
 
-            <li class="li-menu"><a class="boton_deHome" href="/home">HOME</a></li>
+                <li class="li-menu"><a class="boton_deHome mejores-punteadas" href="/home/mejoresPuntuadas">MEJOR PUNTUADAS</a></li>
+
+                <li class="li-menu"><a class="boton_deHome mejores-punteadas" href="/home/reseniasMasRecientes">MAS RECIENTES</a></li>
+    
+              </div>
+          </div>
+
+
+
+
+
+           
+            <li class="li-menu"><a class="boton_deHome nav-inicio" href="/home">HOME</a></li>
             
             <!-- modal de registrate -->
             <li class="li-menu" id="registrate"> 
               <!-- <a class="boton_deRegistro" href="/home/registro">REGISTRATE</a> -->
               <!-- This is a button toggling the modal -->
-              <button uk-toggle="target: #modal-registro" type="button" class="botonDeRegistro">REGISTRATE</button></li>
+              <button uk-toggle="target: #modal-registro" type="button" class="botonDeRegistro nav-inicio">REGISTRATE</button></li>
 
               <!-- This is the modal -->
               <div id="modal-registro" uk-modal>
@@ -165,7 +180,7 @@
               <!-- <a class="boton_deLogIn" href="/home/login">LOGIN</a> -->
 
               <!-- This is a button toggling the modal -->
-              <button class="uk-button uk-button-default uk-margin-small-right boton_deLogIn botonHeaderLogin" type="button" uk-toggle="target: #modal-example">LOGIN</button>
+              <button class="uk-button uk-button-default uk-margin-small-right boton_deLogIn botonHeaderLogin nav-inicio" id="boton-modal-login" type="button" uk-toggle="target: #modal-example">LOGIN</button>
             </li>
               <!-- This is an anchor toggling the modal -->
               <a href="#modal-example" uk-toggle>Open</a>
@@ -176,6 +191,22 @@
                       <h2 class="uk-modal-title">LOGIN</h2>
 
                       <form class="formDeLogin" action="/home" method="post">
+                        <% if (typeof erroresregistracion != "undefined") { %>
+                          <ul class='contenedor-error' style="color:red;position: relative;
+                          top: 10px">
+                              <% for (let i = 0; i < erroresregistracion.length; i++) { %>
+                                  <li>
+                                      <%=erroresregistracion[i]%>
+                                  </li>
+                                  
+                              <% } %>
+                          </ul>
+                        <script>
+                          window.addEventListener('load', function(){
+                                document.getElementById("boton-modal-login").click()
+                              })
+                              </script>
+                        <% } %>
                         <div class="imgcontainer">
                           <img src="/img/img_avatar2.png" alt="Avatar" class="avatar">
                         </div>
@@ -214,7 +245,7 @@
             <li class="li-menu" id="login1"> 
               <!-- <a class="boton_deLogIn" href="/home/usuarios">USUARIOS</a> -->
               <!-- This is a button toggling the modal -->
-              <button uk-toggle="target: #modal-usuarios" type="button" class="botonDeUsarios">USUARIOS</button></li>
+              <button uk-toggle="target: #modal-usuarios" type="button" class="botonDeUsarios nav-inicio">USUARIOS</button></li>
 
               <!-- This is the modal -->
               <div id="modal-usuarios" uk-modal>

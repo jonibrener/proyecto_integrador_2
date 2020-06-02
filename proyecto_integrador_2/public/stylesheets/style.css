@@ -1375,7 +1375,7 @@ a:active, a:hover{
 a.boton_deHome {
     position: relative;
     bottom: 0px;
-    left: 37px;
+    left: -11px;
 }
 
 .button_buscador {
@@ -1910,6 +1910,33 @@ color: black;
   bottom: -74px;
   color: red;
   position: relative;
+}
+
+.dropdown-resenias{
+  position: relative;
+    bottom: -25px;
+    color: white;
+    border: none;
+}
+
+.botton-dropdown-resenias{
+  color: white;
+    background-color: transparent;
+    font-size: 15px;
+    border: none;
+}
+
+.mejores-punteadas{
+  color: black;
+  font-size: 15px;
+  position: relative;
+    left: -17px;
+    top: -9px;
+    text-align: center;
+}
+.nav-inicio{
+  position: relative;
+  right: 100px;
 }
 
 /* Change styles for span and cancel button on extra small screens */
