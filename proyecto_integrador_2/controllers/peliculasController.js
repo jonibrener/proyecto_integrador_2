@@ -89,41 +89,33 @@ let peliculasController = {
         
     },
     comparacion: function(req,res){
-       moduloLogin.chequearUsuario(req.body.uname)
-       .then(resultado => {
+        let errores = []
+       moduloLogin.validar(req.body.uname, req.body.psw)
+       .then(usuario => {
      
-        if (resultado == false){
-           res.redirect("/home")
+        if (usuario == null){
+            errores.push("El usuario ingresado es invalido")
         }
-        else{
-   
-            moduloLogin.buscarPorEmail(req.body.uname)
-             .then(usuario =>{
-    
-           if (bcrypt.compareSync(req.body.psw, usuario.user_pass)){
-               var nombre = usuario.user_name
-               var idUsusario = usuario.user_id
-               db.resenias.findAll({
+         if (errores.length > 0){
+             res.render('login', {errores:errores, pagina: 'login'})
+         }else{
+            db.resenias.findAll({
                 where: [
                    
-                    { user_id: usuario.user_id}
+                    {user_id: usuario.user_id}
                 ], 
                 include: [
     
                     {association: "reseniaUsuario"}
                 ]
                 })
-                    .then(resultado =>{
+                    .then(resultado =>{ 
                         res.render('login', {resultado:resultado, pagina: "login"})
     
                     })
-        }
-           else{
-               res.redirect('/home')
-           }
-       })
-        }
-       })
+            }
+         })
+       
     },
 
     

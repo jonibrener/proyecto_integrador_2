@@ -1906,7 +1906,11 @@ color: black;
   position: relative;
     right: -92px;
 }
-
+.contenedor-error{
+  bottom: -74px;
+  color: red;
+  position: relative;
+}
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {

@@ -1,9 +1,26 @@
 <%- include('header') %>
 
-<h1>TUS RESEÑAS SON:</h1>
 
+<% if (typeof errores != "undefined") { %>
+  <ul class='contenedor-error' style="position: relative;color:red;bottom: -74px">
+      <% for (let i = 0; i < errores.length; i++) { %>
+          <li>
+              <%=errores[i]%>
+          </li>
+          
+      <% } %>
+      <li><h2>
+        Para hacer Log in haz click <a href="#modal-example" uk-toggle="target: #modal-example">aqui</a> 
+      </h2></li>
+      <li><h2>
+        Para registrarte haz click <a href="#modal-registro" uk-toggle="target: #modal-example">aqui</a> 
+      </h2></li>
+  </ul>
+
+<% }else{ %>
+  <h1>Las resenias de este usuario son:</h1>
 <% for (let index = 0; index < resultado.length; index++) {%>
-
+ 
          <div class="uk-child-width-1-2@s uk-child-width-1-3@m" uk-grid>
           <div>
             <div class="uk-card uk-card-default uk-card-body">Id: <%=resultado[index].resenias_id%></div>
@@ -11,7 +28,7 @@
               <div class="uk-card uk-card-default uk-card-body">Texto: <%=resultado[index].resenia_text%></div>
               <div class="uk-card uk-card-default uk-card-body">Puntaje: <%=resultado[index].movie_score%></div>
               <div class="uk-card uk-card-default uk-card-body">Fecha: <%=resultado[index].resenia_date%></div>
-              <div class="uk-card uk-card-default uk-card-body">Usuario: <%=resultado[index].reseniaUsuario.user_name%></div>
+              <!-- <div class="uk-card uk-card-default uk-card-body">Usuario: <%=resultado[index].reseniaUsuario.user_name%></div> -->
 
               <a class="uk-button uk-button-default editarResenia" href="/home/resenias/editar/<%=resultado[index].resenias_id%>">Editar la resenia</a>
               <div id="modal-editar-resenia" uk-modal>
@@ -21,7 +38,8 @@
                    
                   
             
-            
+                   
+
                       <form action="/home/editar" method="POST">
                         <div class="imgcontainer">
                           <img src="/img/img_avatar2.png" alt="Avatar" class="avatar">
@@ -111,7 +129,7 @@
         
                
 <%}%>
-
+<%}%>
 
 
 <%- include('footer') %>
