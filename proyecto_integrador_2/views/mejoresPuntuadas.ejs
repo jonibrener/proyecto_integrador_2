@@ -1,0 +1,14 @@
+<%- include('header')%>
+
+<% for (let index = 0; index < resultados.length; index++) { %>
+    <div class="uk-child-width-1-2@s uk-child-width-1-3@m" uk-grid>
+        <div>
+            <div class="uk-card uk-card-default uk-card-body">Puntaje: <%=resultados[index].movie_score%></div>
+            <div class="uk-card uk-card-default uk-card-body">Texto: <%=resultados[index].resenia_text%></div>
+
+           
+        </div>
+    </div>
+<%}%>
+
+<%- include('footer')%>

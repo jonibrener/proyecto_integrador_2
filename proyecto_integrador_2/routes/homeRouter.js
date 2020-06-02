@@ -30,6 +30,7 @@ router.post('/resenias/eliminar/:id', peliculasController.confirmarEliminar)
 router.get('/resenias/editar/:id', peliculasController.editar)
 router.post('/resenias/editar/:id', peliculasController.confirmarEditar)
 router.get('/reseniasMasRecientes', peliculasController.reseniasMasRecientes)
+router.get('/mejoresPuntuadas', peliculasController.mejoresPuntuadas)
 
 
 

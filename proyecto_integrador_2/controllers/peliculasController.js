@@ -314,6 +314,17 @@ reseniasMasRecientes: function(req,res){
     .then(resultados=>{
         res.render('masRecientes', {resultados:resultados, pagina:"home"})
     })
+},
+mejoresPuntuadas: function(req,res){
+    db.resenias.findAll({
+        order: [
+            ['movie_score', 'DESC'],
+        ],
+        limit: 10
+    })
+    .then(resultados=>{
+        res.render('mejoresPuntuadas', {resultados:resultados, pagina:"home"})
+    })
 }
 }
 module.exports = peliculasController;
