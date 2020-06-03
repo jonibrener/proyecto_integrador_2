@@ -138,6 +138,7 @@ document.querySelector(".cancelarEnvio").style.display = "none"
 function recomendaciones(){
 
   document.querySelector("div.contenedor").style.display= "block"
+  document.querySelector(".subtituloInsertarResenia").style.display="none"
   document.querySelector(".subtitulo").style.display="none"
   document.querySelector(".subtitulo2").style.display = "block"
   document.querySelector(".subtituloResenia").style.display = "none"
