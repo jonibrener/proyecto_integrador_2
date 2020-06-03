@@ -129,7 +129,7 @@
             <li class="li-menu" id="registrate"> 
               <!-- <a class="boton_deRegistro" href="/home/registro">REGISTRATE</a> -->
               <!-- This is a button toggling the modal -->
-              <button uk-toggle="target: #modal-registro" type="button" class="botonDeRegistro nav-inicio">REGISTRATE</button></li>
+              <button uk-toggle="target: #modal-registro" type="button" id="registro-modal" class="botonDeRegistro nav-inicio">REGISTRATE</button></li>
 
               <!-- This is the modal -->
               <div id="modal-registro" uk-modal>
@@ -137,6 +137,24 @@
                       <h2 class="uk-modal-title">SignUp</h2>
 
                       <form action="/home/registro" method="POST">
+                        <form class="formDeLogin" action="/home" method="post">
+                          <% if (typeof errores2 != "undefined") { %>
+                            <ul class='contenedor-error' style="color:red;position: relative;
+                            top: 10px">
+                                <% for (let i = 0; i < errores2.length; i++) { %>
+                                    <li>
+                                        <%=errores2[i]%>
+                                    </li>
+                                    
+                                <% } %>
+                            </ul>
+                          <script>
+                            window.addEventListener('load', function(){
+                                  document.getElementById("registro-modal").click()
+                                })
+                                </script>
+                          <% } %>
+
                         <div class="imgcontainer">
                           <img src="/img/img_avatar2.png" alt="Avatar" class="avatar">
                         </div>
@@ -161,6 +179,16 @@
                           <i class="fa fa-calendar icon"></i>
                           <input class="input-field" type="date" name="birthday">
                         </div>
+
+                        <div class="input-container">
+                          <label class="uk-form-label" for="form-stacked-select">Selecciona tu genero favorito</label>
+                          <div class="uk-form-controls">
+                              <select class="uk-select" id="form-stacked-select">
+                                  <option>Option 01</option>
+                                  <option>Option 02</option>
+                              </select>
+                          </div>
+                      </div>
                         
                       
                         <button type="submit" class="btn">Register</button>
@@ -180,7 +208,7 @@
               <!-- <a class="boton_deLogIn" href="/home/login">LOGIN</a> -->
 
               <!-- This is a button toggling the modal -->
-              <button class="uk-button uk-button-default uk-margin-small-right boton_deLogIn botonHeaderLogin nav-inicio" id="boton-modal-login" type="button" uk-toggle="target: #modal-example">LOGIN</button>
+              <button class="uk-button uk-button-default uk-margin-small-right boton_deLogIn botonHeaderLogin nav-inicio" id="login-boton" type="button" uk-toggle="target: #modal-example">LOGIN</button>
             </li>
               <!-- This is an anchor toggling the modal -->
               <a href="#modal-example" uk-toggle>Open</a>
@@ -203,7 +231,7 @@
                           </ul>
                         <script>
                           window.addEventListener('load', function(){
-                                document.getElementById("boton-modal-login").click()
+                                document.getElementById("login-boton").click()
                               })
                               </script>
                         <% } %>

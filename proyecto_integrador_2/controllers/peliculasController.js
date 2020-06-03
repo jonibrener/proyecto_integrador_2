@@ -62,15 +62,25 @@ let peliculasController = {
     },
 
     creacion: function(req,res){
-        // var name = req.body.name
-
-       // var email = req.body.email
-
-       // var password = req.body.password 
+        let errores= []
        const hash = bcrypt.hashSync(req.body.psw, 10);
 
-
-
+       if (req.body.usrnm.length < 4){
+        errores.push("Por favor, ingrese un usuario de mas de 4 caracteres.")
+    }else if(req.body.email.length < 3){
+        errores.push("Por favor, ingrese un email de al menos 3 caracteres validos.")
+    }else if(req.body.psw.length < 5){
+        errores.push("La contraseña es muy debil, al menos ingrese 6 caracteres.")
+    }else if(req.body.birthday.value == null){
+        errores.push("Por favor, ingrese su fecha de nacimiento.")
+    }if (errores.length > 0){
+        errores.push({pagina:"registro"})
+        req.session.errores2 = errores
+        //  res.render('login', {errores:errores, pagina: 'login'})
+        console.log(errores);
+        // console.log(erroresregistracion);
+         res.redirect("back")
+     }else{
         db.users.create({
             user_name: req.body.usrnm,
             user_email: req.body.email,
@@ -80,6 +90,10 @@ let peliculasController = {
         })
 
         res.redirect('/home')
+     }
+
+
+       
 
     },
     login: function(req,res){
@@ -94,7 +108,7 @@ let peliculasController = {
        .then(usuario => {
      
         if (usuario == null){
-            errores.push("tabacman sos terrible puto")
+            errores.push("El usuario o la contraseña son inválidos.")
         }else if(req.body.uname.length < 3){
             errores.push("Por favor, ingrese al menos 3 caracteres.")
         }else if(req.body.psw.length < 5){
@@ -139,46 +153,34 @@ let peliculasController = {
     //     res.render('detalle', {prueba12:prueba12, pagina:"detalle", idpelicula:id})
     // },
     envioResenias: function(req,res){
-        moduloLogin.chequearUsuario(req.body.email)
-        .then(resultado => {
-            if (resultado == false){
-                res.send("el email no esta en la base de datos");
-                 }
-                else{
-                    // console.log("el email esta en la base de datos");
-                    moduloLogin.buscarPorEmail(req.body.email)
-                     .then(usuario =>{
-                //    console.log('objeto literal con datos')
-                //    console.log(req.body.password);
-                //    console.log(usuario.user_pass);
-                //    console.log(bcrypt.compareSync(req.body.password, usuario.user_pass));
-                   
-                   if (bcrypt.compareSync(req.body.password, usuario.user_pass)){
-                       var nombre = usuario.user_name
-                       var idUsusario = usuario.user_id
-                    //    console.log('logueado con exito' + nombre);
-                       var detalles = req.params.id
-                    //    var date = moment().format("MMM Do YY")
-                       
-                       //No se si funciona esto del date, faltaria mandarlo a la base de datos, pero por las dudas no mande
-                       
-                       db.resenias.create({
-                           resenia_text: req.body.resenia,
-                           movie_score: req.body.quantity,
-                           movie_id: detalles,
-                           user_id: idUsusario,
-                           resenia_date: db.sequelize.literal("CURRENT_DATE")
-                       })
-                   }
-                   else{
-                       console.log('datos invalidos')
-                   }
-               })
-                }
-        })
-        
-        res.redirect('/home')
-    },
+        let errores = []
+       moduloLogin.validar(req.body.email, req.body.password)
+       .then(usuario => {
+     
+        if (usuario == null){
+            errores.push("El usuario o la contraseña son inválidos.")
+        }else if(req.body.email.length < 3){
+            errores.push("Por favor, ingrese al menos 3 caracteres.")
+        }else if(req.body.password.length < 5){
+            errores.push("La contraseña es muy debil, al menos ingrese 6 caracteres")
+        }else if(req.body.resenia == ""){
+            errores.push("Por favor escriba una reseña.")
+        }
+        if (errores.length > 0){
+            req.session.errores3 = errores
+            console.log(errores);
+             res.redirect("back")
+         }else{
+            db.resenias.create({
+                resenia_text: req.body.resenia,
+                movie_score: req.body.quantity,
+                movie_id: detalles,
+                user_id: idUsusario,
+                resenia_date: db.sequelize.literal("CURRENT_DATE")
+            })
+         }
+    })
+},
     usuarios: function(req,res){
         var prueba15 = 'hola'
         let resultados = null

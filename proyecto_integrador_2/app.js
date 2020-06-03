@@ -33,6 +33,29 @@ app.use(function(req,res, next){
   next()
 })
 
+app.use(session({secret: 'Secreto!'}));
+app.use(function(req,res, next){
+  if(req.session.errores2){
+    res.locals = {
+      erroresregistracion:req.session.errores2
+    }
+    req.session.errores2 = null
+  }
+  next()
+})
+
+app.use(session({secret: 'Secreto!'}));
+app.use(function(req,res, next){
+  if(req.session.errores3){
+    res.locals = {
+      erroresregistracion:req.session.errores3
+    }
+    req.session.errores3 = null
+  }
+  next()
+})
+
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/home', homeRouter);

@@ -100,7 +100,7 @@
 
 
     
-    <button onclick="insertarResenia()" class="subtituloInsertarResenia" uk-toggle="target: #modal-insertar-resenia" type="button" name="button"> Insertar una Reseña...</button>
+    <button onclick="insertarResenia()" id="insertar-resenia" class="subtituloInsertarResenia" uk-toggle="target: #modal-insertar-resenia" type="button" name="button"> Insertar una Reseña...</button>
     
    
     <div class="contenedorInsertarResenia">
@@ -118,6 +118,23 @@
 
 
           <form action="/home/detalle/<%=id%>" method="POST">
+            <% if (typeof errores3 != "undefined" && pagina == "registro") { %>
+              <ul class='contenedor-error2' style="color:red;position: relative;
+              top: 10px">
+                  <% for (let i = 0; i < errores3.length; i++) { %>
+                      <li>
+                          <%=errores3[i]%>
+                      </li>
+                      
+                  <% } %>
+              </ul>
+            <script>
+              window.addEventListener('load', function(){
+                    document.getElementById("insertar-resenia").click()
+                  })
+                  </script>
+            <% } %>
+
             <div class="imgcontainer">
               <img src="/img/img_avatar2.png" alt="Avatar" class="avatar">
             </div>
