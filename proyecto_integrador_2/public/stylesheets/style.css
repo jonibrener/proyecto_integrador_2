@@ -1100,11 +1100,38 @@ a.boton_deHome2:hover{
 }
 
 
-/* dispositivos mobile */
-@media (min-width: 0px) and (max-width: 480px) {
+/* dispositivos mobile 420px*/
+@media (min-width: 0px) and (max-width: 420px) {
   .topnav .search-container {
     float: none;
   }
+
+  nav {
+    background-color: #61F3CC;
+    width: 100%;
+    height: 105px;
+    z-index: 1;
+    box-shadow: -2px -2px 5px grey, 2px 2px 5px grey;
+}
+
+  .carouseles {
+    overflow: hidden;
+    padding-top: 90px;
+}
+
+  .carousel1 {
+    width: 100%;
+    border-radius: 20%;
+    height: 53vh;
+    border: #61F3CC;
+    border-style: solid;
+}
+
+.prev, .next {
+  padding: 9px;
+
+}
+
   .topnav a, .topnav input[type=text], .topnav .search-container button {
     float: none;
     display: block;
