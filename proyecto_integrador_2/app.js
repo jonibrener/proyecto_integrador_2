@@ -37,7 +37,7 @@ app.use(session({secret: 'Secreto!'}));
 app.use(function(req,res, next){
   if(req.session.errores2){
     res.locals = {
-      erroresregistracion:req.session.errores2
+      errores2:req.session.errores2
     }
     req.session.errores2 = null
   }
@@ -48,7 +48,7 @@ app.use(session({secret: 'Secreto!'}));
 app.use(function(req,res, next){
   if(req.session.errores3){
     res.locals = {
-      erroresregistracion:req.session.errores3
+      errores3:req.session.errores3
     }
     req.session.errores3 = null
   }

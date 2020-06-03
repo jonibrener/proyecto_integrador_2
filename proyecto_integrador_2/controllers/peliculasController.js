@@ -74,7 +74,6 @@ let peliculasController = {
     }else if(req.body.birthday.value == null){
         errores.push("Por favor, ingrese su fecha de nacimiento.")
     }if (errores.length > 0){
-        errores.push({pagina:"registro"})
         req.session.errores2 = errores
         //  res.render('login', {errores:errores, pagina: 'login'})
         console.log(errores);

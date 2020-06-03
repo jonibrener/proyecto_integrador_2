@@ -118,7 +118,7 @@
 
 
           <form action="/home/detalle/<%=id%>" method="POST">
-            <% if (typeof errores3 != "undefined" && pagina == "registro") { %>
+            <% if (typeof errores3 != "undefined") { %>
               <ul class='contenedor-error2' style="color:red;position: relative;
               top: 10px">
                   <% for (let i = 0; i < errores3.length; i++) { %>
