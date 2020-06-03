@@ -79,6 +79,14 @@ nav ul.ul-menu {
 height: 90.28px;
 
 }
+.contenedorDeMejores{
+  display: flex;
+  flex-wrap: wrap;
+}
+.divMejores{
+  width: 80%;
+  margin-left: 10%;
+}
 nav li.li-menu {
   margin: 0 30px 0 0;
   padding: 10px;
@@ -1938,6 +1946,7 @@ color: black;
   position: relative;
   right: 100px;
 }
+
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
