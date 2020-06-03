@@ -45,54 +45,35 @@
         <!-- This is the modal -->
         <div id="modal-ver-resenias" uk-modal>
             <div class="uk-modal-dialog uk-modal-body">
-              
-              <!-- COMIENZO DE CARRUSEL -->
-              <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="clsActivated: uk-transition-active; center: true">
-
-              </div>
-                <h2 class="uk-modal-title">Las Reseñas para esta pelicula son...</h2>
-                <ul>
-                  <% for (let index = 0; index < resultados.length; index++) { %>
-                    
-                    <ul class="uk-slider-items uk-grid">
-                      <li class="uk-width-3-4">
-                          <div class="uk-panel">
-                              
-                              <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
-                                  <h3 class="uk-margin-remove">Resultados</h3>
-                                  <li class="carruResenias"> 
-                                    <h3>Texto:</h3><%=resultados[index].resenia_text%> 
-                                    </li>
-                                    <li class="carruResenias">
-                                     <h3>Puntaje</h3> <%=resultados[index].movie_score%> 
-                                    </li>
-                                    <li class="carruResenias">
-                                     <h3>Fecha:</h3> <%=resultados[index].resenia_date%>
-                                    </li>
-                                    <li class="carruResenias">
-                                      <h3>usuairio:</h3> <%=resultados[index].reseniaUsuario.user_name%>
-                                     </li>
-                                  <div class="uk-position-center uk-panel"></div>
-                              </li>
-                      
-                   </ul>
-                  </ul>
-                    <% } %>
-                  </ul>
-
-                
-                <button onclick="resenias2()" class="uk-modal-close subtitulo2Resenia"  type="button" name="button">Cancelar</button>
-
-                <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
-        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
-    
-    </div>
-            </div>
-        </div>
-        
-    </div>
     
      
+    <div uk-slider="center: true">
+      <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
+          <ul class="uk-slider-items uk-child-width-1-2@s uk-grid">
+            <% for (let index = 0; index < resultados.length; index++) { %>    
+            <li>
+                  <div class="uk-card uk-card-default">
+                      <div class="uk-card-body">
+                          <h3 class="uk-card-title">Reseñas</h3>
+                          <p>Texto: <%=resultados[index].resenia_text%></p>
+                          <p>Puntaje: <%=resultados[index].movie_score%></p>
+                          <p>Fecha: <%=resultados[index].resenia_date%></p>
+                          <p>Usuario: <%=resultados[index].reseniaUsuario.user_name%></p>
+
+
+                      </div>
+                  </div>
+              </li>
+              <% } %>
+            </ul>
+            <a class="uk-position-center-left uk-position-small uk-hidden-hover" style='color:black' href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+            <a class="uk-position-center-right uk-position-small uk-hidden-hover" style='color:black' href="#" uk-slidenav-next uk-slider-item="next"></a>
+        </div>    
+    </div>
+    </div>
+  </div>
+</div>
+
 
 
     
