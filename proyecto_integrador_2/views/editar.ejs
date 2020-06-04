@@ -1,12 +1,23 @@
 <%- include('header') %>
 
-<h2 class="uk-modal-title">Editar reseña</h2>
+<h2 class="uk-modal-title">Confirma tus datos para editar la Reseña</h2>
 <section class="contenedorFormulario">
 
 
 
 
   <form action="/home/resenias/editar/<%=editarId%>" method="POST">
+
+    <% if (typeof errores5 != "undefined") { %>
+      <ul class='contenedor-error2' style="color:red;position: relative;
+      top: 10px">
+          <% for (let i = 0; i < errores5.length; i++) { %>
+              <li>
+                  <%=errores5[i]%>
+              </li>
+              
+          <% } %>
+
     <div class="imgcontainer">
       <img src="/img/img_avatar2.png" alt="Avatar" class="avatar">
     </div>

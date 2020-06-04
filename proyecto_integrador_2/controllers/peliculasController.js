@@ -267,24 +267,25 @@ editar: function(req,res){
 },
 
 confirmarEditar: function(req,res){
-    moduloLogin.chequearUsuario(req.body.email)
-.then(resultado => {
-    if (resultado == false){
-        res.send("el email no esta en la base de datos");
-         }
-        else{
-            moduloLogin.buscarPorEmail(req.body.email)
-             .then(usuario =>{
-           
-           if (bcrypt.compareSync(req.body.password, usuario.user_pass)){
-               
-            // let updateR ={
-            //     textoResenia: req.body.resenia_text,
-            //     puntajeResenia: req.body.quantity,
-            //     id: req.params.id
-            // }
-
-               db.resenias.update({
+    let errores = []
+       moduloLogin.validar(req.body.email, req.body.password)
+       .then(usuario => {
+     
+        if (usuario == null){
+            errores.push("El usuario o la contraseña son inválidos.")
+        }else if(req.body.email.length < 3){
+            errores.push("Por favor, ingrese un email de al menos 3 caracteres.")
+        }else if(req.body.password.length < 5){
+            errores.push("La contraseña es muy debil, al menos ingrese 6 caracteres")
+        }else if(req.body.resenias == ""){
+            errores.push("Por favor, ingrese una reseña")
+        }
+        if (errores.length > 0){
+            req.session.errores5 = errores
+            console.log(errores);
+             res.redirect("back")
+         }else{
+            db.resenias.update({
                 resenia_text: req.body.resenia,
                 movie_score: req.body.quantity,
                 resenia_updateDate: db.sequelize.literal("CURRENT_DATE")
@@ -299,17 +300,8 @@ confirmarEditar: function(req,res){
                    })
                 
                })
-            
-           }
-           else{
-            res.redirect('/home/resenias/editar/'+req.params.id)
-        }
-        
+            }
 })
-}
-})
-
-
 },
 reseniasMasRecientes: function(req,res){
     db.resenias.findAll({
