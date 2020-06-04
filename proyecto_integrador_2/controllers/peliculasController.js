@@ -71,6 +71,10 @@ let peliculasController = {
         errores.push("Por favor, ingrese un email de al menos 3 caracteres validos.")
     }else if(req.body.psw.length < 5){
         errores.push("La contraseña es muy debil, al menos ingrese 6 caracteres.")
+    }else if(req.body.birthday == false){
+        errores.push("Por favor, ingrese su fecha de nacimiento.")
+    }else if(req.body.genero == 0){
+        errores.push("Por favor, ingrese su genero favorito.")
     }
     
     if (errores.length > 0){
@@ -80,11 +84,15 @@ let peliculasController = {
         // console.log(erroresregistracion);
          res.redirect("back")
      }else{
+        console.log(req.body.genero);
+        
+          
         db.users.create({
             user_name: req.body.usrnm,
             user_email: req.body.email,
             user_pass: hash,
             user_bornDate: req.body.birthday, 
+            generos_id: req.body.genero
 
         })
 

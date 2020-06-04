@@ -17,6 +17,9 @@ module.exports = function (sequelize, DataTypes){
         },
         user_bornDate: {
             type: DataTypes.DATE
+        },
+       generos_id: {
+            type: DataTypes.INTEGER
         }
         
     }

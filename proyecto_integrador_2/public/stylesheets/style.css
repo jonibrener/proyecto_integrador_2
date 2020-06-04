@@ -2006,7 +2006,12 @@ color: black;
     position: relative;
     background-color: mediumspringgreen;
 }
-
+#cambiarOrden{
+  background-color: royalblue;
+    width: 11%;
+    position: relative;
+    right: -40pc;
+}
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
