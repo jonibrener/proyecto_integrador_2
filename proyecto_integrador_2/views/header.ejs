@@ -234,6 +234,9 @@
                                 document.getElementById("login-boton").click()
                               })
                               </script>
+                               <% if (erroresregistracion = [0]){ %>
+                                <button uk-toggle="target: #modal-registro" type="button" id="registro-modal" class="botonDeRegistro nav-inicio boton-errores">REGISTRATE</button></li>
+                              <%}%>
                         <% } %>
                         <div class="imgcontainer">
                           <img src="/img/img_avatar2.png" alt="Avatar" class="avatar">

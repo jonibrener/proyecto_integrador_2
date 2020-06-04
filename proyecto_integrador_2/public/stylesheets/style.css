@@ -1988,6 +1988,15 @@ color: black;
   right: 100px;
 }
 
+.boton-errores{
+  position: relative;
+    right: -410px;
+    width: 22%;
+    text-align: center;
+    top: 390px;
+    background-color: mediumspringgreen;
+}
+
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
