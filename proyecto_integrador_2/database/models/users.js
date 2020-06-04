@@ -19,7 +19,7 @@ module.exports = function (sequelize, DataTypes){
             type: DataTypes.DATE
         },
        generos_id: {
-            type: DataTypes.INTEGER
+            type: DataTypes.STRING
         }
         
     }

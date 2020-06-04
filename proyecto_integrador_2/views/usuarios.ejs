@@ -12,16 +12,20 @@
 <!-- Tabla para resultado de usuarios -->
 <% if (resultados){ %>
     <% if (resultados.length > 0){ %>
-        <h2 class="nombre">Los resultados para tu busqueda son:</h2>
+        <h2 class="nombre">Los resultados para <%=busquedaUsuarios%> son:</h2>
         
         <% for (let index = 0; index < resultados.length; index++) { %>
             <div class="uk-child-width-1-2@s uk-child-width-1-3@m" uk-grid>
                 <div>
                     <div class="uk-card uk-card-default uk-card-body">Email: <%=resultados[index].user_email%></div>
                     <div class="uk-card uk-card-default uk-card-body">Nombre: <%=resultados[index].user_name%></div>
-                    <div class="uk-card uk-card-default uk-card-body">Genero favorito: <%=resultados[index].generos_id%></div>
+                    <% if (resultados[index].generos_id != null){ %>
+                        <div class="uk-card uk-card-default uk-card-body">Genero Favorito: <%=resultados[index].generos_id%></div>
+                    <%}else{%>
+                        <div class="uk-card uk-card-default uk-card-body">Genero Favorito: No seleccionaste ningun genero como favorito</div>
+                    <%}%>
 
-                    <div class="uk-card uk-card-default uk-card-body"> <a href="/home/infousuarios/<%=resultados[index].user_id%>">Ver usuario</a></div>
+                    <div class="uk-card uk-card-default uk-card-body"> <a href="/home/infousuarios/<%=resultados[index].user_id%>" style="color:black; background-color: lightgrey;">Ver usuario</a></div>
 
                    
                 </div>
@@ -31,7 +35,7 @@
         <div class="uk-alert-warning" uk-alert>
 
             <a class="uk-alert-close" uk-close></a>
-            <p>No se encontraron resultados para tu busqueda, intenta nuevamente</p>
+            <p>No se encontraron resultados para <%=busquedaUsuarios%>, intenta nuevamente</p>
             <a href="/home">Haz click para volver a la Home</a>
         </div>
         <%}%>

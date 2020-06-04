@@ -3,15 +3,21 @@
 
  
   <% if (resultado.length != 0){ %>
-<% for (let index = 0; index < resultado.length; index++) {%>
-  <h2 class="nombre">Las resenias de <%=resultado[index].reseniaUsuario.user_name%> son:</h2>
+    <% for (let index = 0; index < 1; index++) {%>
+      <h2 class="nombre">Las resenias de <%=resultado[index].reseniaUsuario.user_name%> son:</h2>
+      <% } %>
+
+    <% for (let index = 0; index < resultado.length; index++) {%>
          <div class="uk-child-width-1-2@s uk-child-width-1-3@m" uk-grid>
           <div>
-            <div class="uk-card uk-card-default uk-card-body">Id: <%=resultado[index].resenias_id%></div>
+           
               <!-- <div class="uk-card uk-card-default uk-card-body">Pelicula: <%=resultado[index].resenia_text%></div> -->
               <div class="uk-card uk-card-default uk-card-body">Texto: <%=resultado[index].resenia_text%></div>
               <div class="uk-card uk-card-default uk-card-body">Puntaje: <%=resultado[index].movie_score%></div>
               <div class="uk-card uk-card-default uk-card-body">Fecha: <%=resultado[index].resenia_date%></div>
+              <div class="uk-card uk-card-default uk-card-body">
+                <a href="/home/detalle/?id=<%=resultado[index].movie_id%>" style="color:black">Go To the movie</a>
+               </div>
               <!-- <div class="uk-card uk-card-default uk-card-body">Usuario: <%=resultado[index].reseniaUsuario.user_name%></div> -->
               <a class="uk-button uk-button-default editarResenia" href="/home/resenias/editar/<%=resultado[index].resenias_id%>">Editar la resenia</a>
               <div id="modal-editar-resenia" uk-modal>

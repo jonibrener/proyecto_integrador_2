@@ -111,8 +111,8 @@ for (var i = 0; i < generos_array.length; i++) {
 
 
 
-document.querySelector(".dropdown-content").innerHTML += "<p><a href=/home/genero/?id=" + id + ">" + title + "</a></p>"
- document.querySelector(".uk-select").innerHTML += "<option value='" + id + "'>" + title + "</option>"
+  document.querySelector(".dropdown-content").innerHTML += "<p><a href=/home/genero/?id=" + id + ">" + title + "</a></p>"
+ document.querySelector(".uk-select").innerHTML += "<option value='" + title + "'>" + title + "</option>"
 
  
 
@@ -296,3 +296,4 @@ $(document).ready(function(){
     $("#myModal").modal();
   });
 });
+

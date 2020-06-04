@@ -2008,9 +2008,14 @@ color: black;
 }
 #cambiarOrden{
   background-color: royalblue;
-    width: 11%;
+    width: 14%;
     position: relative;
-    right: -40pc;
+    right: 22px;
+    margin-right: 19px;
+}
+
+.divInfoUsuarios{
+  margin-bottom: 100px;
 }
 
 /* Change styles for span and cancel button on extra small screens */

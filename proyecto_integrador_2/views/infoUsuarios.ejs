@@ -1,11 +1,17 @@
 <%- include('header')%>
 <h2 class="nombre">Informacion de los usuarios:</h2>
-<div class="uk-child-width-1-2@s uk-child-width-1-3@m" uk-grid>
+<div class="uk-child-width-1-2@s uk-child-width-1-3@m divInfoUsuarios" uk-grid>
     <div>
         <div class="uk-card uk-card-default uk-card-body">Email: <%=resultado.user_email%></div>
         <div class="uk-card uk-card-default uk-card-body">Nombre: <%=resultado.user_name%></div>
         <div class="uk-card uk-card-default uk-card-body">Fecha de Nacimiento: <%=resultado.user_bornDate%></div>
-       
+        <% if (resultado.generos_id != null){ %>
+        <div class="uk-card uk-card-default uk-card-body hrefGenero">
+            Genero Favorito: <%=resultado.generos_id%>
+        </div>
+    <%}else{%>
+        <div class="uk-card uk-card-default uk-card-body">Genero Favorito: No seleccionaste ningun genero como favorito</div>
+    <%}%>
     </div>
 </div>
 

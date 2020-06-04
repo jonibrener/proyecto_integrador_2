@@ -200,6 +200,7 @@ let peliculasController = {
     },
 
     buscadorDeUsuarios: function(req,res){
+    var busquedaUsuarios = req.body.usuario
         db.users.findAll({
             where: {
                 [OP.or]: [
@@ -214,14 +215,14 @@ let peliculasController = {
 
                 // console.log(resultados);
                 
-                res.render('usuarios', {resultados: 'No se encontraron usuarios para ese mail', resultados:resultados, pagina: 'estrenos'});
+                res.render('usuarios', {resultados: 'No se encontraron usuarios para ese mail', resultados:resultados, pagina: 'estrenos', busquedaUsuarios:busquedaUsuarios});
                 
             }else{
                 // console.log(2);
                 
                 // console.log(resultados);
                 
-                res.render('usuarios', {resultados:resultados, pagina: 'estrenos'})
+                res.render('usuarios', {resultados:resultados, pagina: 'estrenos', busquedaUsuarios:busquedaUsuarios})
             }
         })
     },
@@ -275,7 +276,9 @@ let peliculasController = {
 },
 
 editar: function(req,res){
+
     resultado= []
+  
     res.render('editar', {editarId:req.params.id, pagina:"home", resultado:resultado})
 },
 
