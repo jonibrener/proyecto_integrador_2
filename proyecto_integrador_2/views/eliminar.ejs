@@ -1,9 +1,27 @@
 <%- include('header')%>
 
  
-        <h2 class="uk-modal-title">LOGIN</h2>
+        <h2 class="uk-modal-title">Confirmá tus datos para eliminar la reseña</h2>
 
-        <form class="formDeLogin" action="/home/resenias/eliminar/<%=deleteId%>" method="POST">
+        <form class="formDeLogin formDeEliminar" action="/home/resenias/eliminar/<%=deleteId%>" method="POST">
+
+          <% if (typeof errores4 != "undefined") { %>
+            <ul class='contenedor-error2' style="color:red;position: relative;
+            top: 10px">
+                <% for (let i = 0; i < errores4.length; i++) { %>
+                    <li>
+                        <%=errores4[i]%>
+                    </li>
+                    
+                <% } %>
+            </ul>
+          <!-- <script>
+            window.addEventListener('load', function(){
+                  document.getElementById("").click()
+                })
+                </script> -->
+          <% } %>
+
           <div class="imgcontainer imagenLogEliminar">
             <img src="/img/img_avatar2.png" alt="Avatar" class="avatar imagenLogEliminar">
           </div>
@@ -17,7 +35,7 @@
                 <br>
             <button type="submit" class="submitLogin formCancelarLog">Login</button>
             <label class="formCancelarLog">
-              <input type="checkbox" checked="checked" name="remember" class="formCancelarLog"> Remember me
+              <input type="checkbox" checked="checked" name="remember" class="formCancelarLog cancelar-check"> Remember me
             </label>
           </div>
 

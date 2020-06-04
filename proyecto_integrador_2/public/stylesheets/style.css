@@ -1926,15 +1926,29 @@ color: black;
 }
 
 .imagenLogEliminar{
-  width: 25%;
-    right: -503px;
+  width: 86%;
+    /* right: -503px;
     position: relative;
-    left: 238px;
+    left: 238px; */
+}
+
+.cancelar-check{
+  position: relative;
+    right: -4px;
 }
 
 .formLogEliminar{
   position: relative;
     right: -212px;
+    left: -13px;
+    width: 191%;
+
+}
+.formDeEliminar{
+  background: white;
+    width: 29%;
+    position: relative;
+    right: -481px;
 }
 
 .formCancelarLog{

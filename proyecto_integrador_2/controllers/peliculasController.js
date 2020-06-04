@@ -231,19 +231,25 @@ let peliculasController = {
         res.render('eliminar', {deleteId:req.params.id, pagina:"home", resultado:resultado})
     },
     confirmarEliminar: function(req,res){
-        moduloLogin.chequearUsuario(req.body.email)
-    .then(resultado => {
-        if (resultado == false){
-            res.send("el email no esta en la base de datos");
-             }
-            else{
-                moduloLogin.buscarPorEmail(req.body.email)
-                 .then(usuario =>{
-               
-               if (bcrypt.compareSync(req.body.password, usuario.user_pass)){
-                   var nombre = usuario.user_name
-                   var idUsusario = usuario.user_id
-                   var detalles = req.params.id
+        let errores = []
+       moduloLogin.validar(req.body.email, req.body.password)
+       .then(usuario => {
+     
+        if (usuario == null){
+            errores.push("El usuario o la contraseña son inválidos.")
+        }else if(req.body.email.length < 3){
+            errores.push("Por favor, ingrese un email de al menos 3 caracteres.")
+        }else if(req.body.password.length < 5){
+            errores.push("La contraseña es muy debil, al menos ingrese 6 caracteres")
+        }
+        if (errores.length > 0){
+            req.session.errores4 = errores
+            console.log(errores);
+             res.redirect("back")
+         }else{
+            var nombre = usuario.user_name
+            var idUsusario = usuario.user_id
+             var detalles = req.params.id
                  
                    db.resenias.destroy({
                     where: {
@@ -251,11 +257,7 @@ let peliculasController = {
                     }
                 })
                 res.redirect("/home")
-               }else{
-                res.redirect('/home/resenias/eliminar/'+req.params.id)
-            }
-    })
-}
+         }
     })
 },
 

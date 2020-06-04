@@ -55,6 +55,28 @@ app.use(function(req,res, next){
   next()
 })
 
+app.use(session({secret: 'Secreto!'}));
+app.use(function(req,res, next){
+  if(req.session.errores4){
+    res.locals = {
+      errores4:req.session.errores4
+    }
+    req.session.errores4 = null
+  }
+  next()
+})
+
+app.use(session({secret: 'Secreto!'}));
+app.use(function(req,res, next){
+  if(req.session.errores5){
+    res.locals = {
+      errores5:req.session.errores5
+    }
+    req.session.errores5 = null
+  }
+  next()
+})
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
