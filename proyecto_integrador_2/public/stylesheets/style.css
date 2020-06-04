@@ -1291,16 +1291,18 @@ a.boton_deHome {
     box-sizing: border-box;
 }
 h2.nombre{
-font-size: 2rem;
-background-color: #68f2cc;
-color: white;
-width: 50%;
-margin: 0 auto;
-border-radius: 20px;
-border-style: double;
-border-color: black;
-text-align: center;
-top: 10%;
+  font-size: 2rem;
+  background-color: #68f2cc;
+  color: white;
+  width: 49%;
+  margin: 0 auto;
+  border-radius: 20px;
+  border-style: double;
+  border-color: black;
+  text-align: center;
+  top: 17%;
+  margin-top: 51px;
+  margin-bottom: 1pc;
 }
 ul.info{
   text-align: center;
@@ -1994,6 +1996,14 @@ color: black;
     width: 22%;
     text-align: center;
     top: 390px;
+    background-color: mediumspringgreen;
+}
+
+.submit-buscador-usuarios{
+  cursor: pointer;
+    width: 25%;
+    height: 43px;
+    position: relative;
     background-color: mediumspringgreen;
 }
 

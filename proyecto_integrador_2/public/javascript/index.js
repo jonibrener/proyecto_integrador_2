@@ -112,6 +112,10 @@ for (var i = 0; i < generos_array.length; i++) {
 
 
   var generos = document.querySelector(".dropdown-content").innerHTML += "<p><a href=/home/genero/?id=" + id + ">" + title + "</a></p>"
+  var generos = document.querySelector(".uk-select").innerHTML += "<option value='1'>" + title + "</option>"
+
+ 
+
 }
 
 

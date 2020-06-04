@@ -1,10 +1,10 @@
 <%- include('header') %>
 
 
-  <h1>Las resenias de este usuario son:</h1>
+ 
   <% if (resultado.length != 0){ %>
 <% for (let index = 0; index < resultado.length; index++) {%>
-  
+  <h2 class="nombre">Las resenias de <%=resultado[index].reseniaUsuario.user_name%> son:</h2>
          <div class="uk-child-width-1-2@s uk-child-width-1-3@m" uk-grid>
           <div>
             <div class="uk-card uk-card-default uk-card-body">Id: <%=resultado[index].resenias_id%></div>

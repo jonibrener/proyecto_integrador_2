@@ -1,12 +1,12 @@
 <%- include('header') %>
 
-<h2 class="uk-modal-title">Confirma tus datos para editar la Reseña</h2>
+<h2 class="uk-modal-title nombre">Confirma tus datos para editar la Reseña</h2>
 <section class="contenedorFormulario">
 
 
 
 
-  <form action="/home/resenias/editar/<%=editarId%>" method="POST">
+  <form action="/home/resenias/editar/<%=editarId%>" method="POST" class="formDeEliminar">
 
     <% if (typeof errores5 != "undefined") { %>
       <ul class='contenedor-error2' style="color:red;position: relative;
@@ -47,15 +47,10 @@
       <input class="uk-range" type="range" value="2" min="0" max="10" step="0.1" name="quantity">
   </div>
     
-<button type="submit">Subir</button>
-  </form>
-  
-  
-  <div class="uk-modal-footer uk-text-right">
-      <button class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
-      <button class="uk-button uk-button-primary" type="submit">Subir resenia</button>
-  </div>
+<button type="submit">Subir reseña</button>
+<a href="/home"><button class="uk-button uk-button-default uk-modal-close cancelbtn cancelLogIn" type="button">Cancel</button></a>
 
+  </form>
 
 </div>
 </div>

@@ -3,7 +3,7 @@
 <form action="/home/usuarios" method="POST" class="formUsuarios"> 
     <label for="usuario">BUSCADOR DE USUARIOS</label>
     <input type="usuario" id="usuario" name="usuario">
-    <input type="submit">
+    <input type="submit" class="submit-buscador-usuarios">
 
 
 </form>
@@ -12,8 +12,8 @@
 <!-- Tabla para resultado de usuarios -->
 <% if (resultados){ %>
     <% if (resultados.length > 0){ %>
-        <h1>Los resultados para tu busqueda son:
-        </h1>
+        <h2 class="nombre">Los resultados para tu busqueda son:</h2>
+        
         <% for (let index = 0; index < resultados.length; index++) { %>
             <div class="uk-child-width-1-2@s uk-child-width-1-3@m" uk-grid>
                 <div>
