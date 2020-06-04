@@ -71,9 +71,9 @@ let peliculasController = {
         errores.push("Por favor, ingrese un email de al menos 3 caracteres validos.")
     }else if(req.body.psw.length < 5){
         errores.push("La contraseña es muy debil, al menos ingrese 6 caracteres.")
-    }else if(req.body.birthday.value == null){
-        errores.push("Por favor, ingrese su fecha de nacimiento.")
-    }if (errores.length > 0){
+    }
+    
+    if (errores.length > 0){
         req.session.errores2 = errores
         //  res.render('login', {errores:errores, pagina: 'login'})
         console.log(errores);
@@ -153,6 +153,7 @@ let peliculasController = {
     // },
     envioResenias: function(req,res){
         let errores = []
+        let detalles
        moduloLogin.validar(req.body.email, req.body.password)
        .then(usuario => {
      
@@ -170,6 +171,9 @@ let peliculasController = {
             console.log(errores);
              res.redirect("back")
          }else{
+            var nombre = usuario.user_name
+            var idUsusario = usuario.user_id
+            var detalles = req.params.id
             db.resenias.create({
                 resenia_text: req.body.resenia,
                 movie_score: req.body.quantity,
@@ -177,6 +181,7 @@ let peliculasController = {
                 user_id: idUsusario,
                 resenia_date: db.sequelize.literal("CURRENT_DATE")
             })
+            res.redirect('back')
          }
     })
 },
