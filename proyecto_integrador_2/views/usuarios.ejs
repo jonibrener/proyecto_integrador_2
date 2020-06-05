@@ -1,12 +1,12 @@
 <%- include('header')%>
-
+<!-- 
 <form action="/home/usuarios" method="POST" class="formUsuarios"> 
     <label for="usuario">BUSCADOR DE USUARIOS</label>
     <input type="usuario" id="usuario" name="usuario">
     <input type="submit" class="submit-buscador-usuarios">
 
 
-</form>
+</form> -->
 
 
 <!-- Tabla para resultado de usuarios -->
@@ -20,7 +20,10 @@
                     <div class="uk-card uk-card-default uk-card-body">Email: <%=resultados[index].user_email%></div>
                     <div class="uk-card uk-card-default uk-card-body">Nombre: <%=resultados[index].user_name%></div>
                     <% if (resultados[index].generos_id != null){ %>
-                        <div class="uk-card uk-card-default uk-card-body">Genero Favorito: <%=resultados[index].generos_id%></div>
+                        <div class="uk-card uk-card-default uk-card-body generoFav" id="generoFav">
+                              
+                                
+                              </div>
                     <%}else{%>
                         <div class="uk-card uk-card-default uk-card-body">Genero Favorito: No seleccionaste ningun genero como favorito</div>
                     <%}%>

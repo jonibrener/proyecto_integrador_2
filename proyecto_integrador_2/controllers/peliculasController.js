@@ -222,7 +222,7 @@ let peliculasController = {
                 
                 // console.log(resultados);
                 
-                res.render('usuarios', {resultados:resultados, pagina: 'estrenos', busquedaUsuarios:busquedaUsuarios})
+                res.render('usuarios', {resultados:resultados, pagina: 'usuarios', busquedaUsuarios:busquedaUsuarios})
             }
         })
     },
