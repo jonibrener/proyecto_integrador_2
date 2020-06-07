@@ -50,6 +50,7 @@
     <div uk-slider="center: true">
       <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
           <ul class="uk-slider-items uk-child-width-1-2@s uk-grid">
+            <% if (resultados.length > 0){ %>
             <% for (let index = 0; index < resultados.length; index++) { %>    
             <li>
                   <div class="uk-card uk-card-default">
@@ -65,6 +66,12 @@
                   </div>
               </li>
               <% } %>
+            <%}else{%>
+              <li>
+                <div class="uk-card uk-card-default">
+                    <div class="uk-card-body">
+                        <h3 class="uk-card-title">No hay Reseñas para esta pelicula</h3>
+            <%}%>
             </ul>
             <a class="uk-position-center-left uk-position-small uk-hidden-hover" style='color:black' href="#" uk-slidenav-previous uk-slider-item="previous"></a>
             <a class="uk-position-center-right uk-position-small uk-hidden-hover" style='color:black' href="#" uk-slidenav-next uk-slider-item="next"></a>
