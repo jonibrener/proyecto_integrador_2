@@ -211,6 +211,7 @@ let peliculasController = {
         }).then(resultados => {
             // console.log(resultados);
             if (resultados.length == 0) {
+                
                 // console.log(1);
 
                 // console.log(resultados);

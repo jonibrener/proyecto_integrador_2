@@ -7,8 +7,8 @@
         <div class="uk-card uk-card-default uk-card-body">Fecha de Nacimiento: <%=resultado.user_bornDate%></div>
         <% if (resultado.generos_id != null){ %>
             <div class="uk-card uk-card-default uk-card-body generoFav" id="generoFav">
-                              
-                                
+               Genero favorito: <%=resultado.generos_id%>       
+                </a>
             </div>
     <%}else{%>
         <div class="uk-card uk-card-default uk-card-body">Genero Favorito: No seleccionaste ningun genero como favorito</div>

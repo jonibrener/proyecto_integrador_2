@@ -19,14 +19,14 @@
                 <div>
                     <div class="uk-card uk-card-default uk-card-body">Email: <%=resultados[index].user_email%></div>
                     <div class="uk-card uk-card-default uk-card-body">Nombre: <%=resultados[index].user_name%></div>
-                    <% if (resultados[index].generos_id != null){ %>
+                    <!-- <% if (resultados[index].generos_id != null){ %>
                         <div class="uk-card uk-card-default uk-card-body generoFav" id="generoFav">
-                              
-                                
-                              </div>
+                            Genero favorito: <%=resultados[index].generos_id%>       
+                                             
+                         </div>
                     <%}else{%>
                         <div class="uk-card uk-card-default uk-card-body">Genero Favorito: No seleccionaste ningun genero como favorito</div>
-                    <%}%>
+                    <%}%> -->
 
                     <div class="uk-card uk-card-default uk-card-body"> <a href="/home/infousuarios/<%=resultados[index].user_id%>" style="color:black; background-color: lightgrey;">Ver usuario</a></div>
 

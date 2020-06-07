@@ -111,12 +111,13 @@ for (var i = 0; i < generos_array.length; i++) {
   document.querySelector(".dropdown-content").innerHTML += "<p><a href=/home/genero/?id=" + generos_array[i].id + ">" + title + "</a></p>"
   document.querySelector(".uk-select").innerHTML += "<option value='" + title + "'>" + title + "</option>"
 
-
 }
 for (var i = 0; i < generos_array.length; i++) {
+
   var id = generos_array[i].id
   var title = generos_array[i].name
-document.getElementById("generoFav").innerHTML = "<p>Genero Favorito:</p><a style='color:black;' href='/home/genero/?id="+ id + "'>" + title + "</a></div>"
+  
+document.getElementById("generoFav").innerHTML += "<a style='color:black;' href='/home/genero/?id="+ id + "'>"
 
 }
 })
